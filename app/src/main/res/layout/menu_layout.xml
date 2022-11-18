@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainMenu">
+
+    <!-- MENU TITLE TEXT -->
+    <!-- PLACED AT TOP OF SCREEN WITH MARGIN OF 20dp -->
+    <TextView
+        android:id="@+id/menuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/menu_title"
+        android:textColor="@color/white"
+        android:textSize="55dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- SUBTEXT -->
+    <TextView
+        android:layout_below="@id/menuTitle"
+        android:id="@+id/subtitle"
+        android:text="@string/subtitle"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- RELATIVE LAYOUT -->
+    <!-- HOLDS MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
+    <RelativeLayout
+        android:id="@+id/menuButtons"
+        android:layout_below="@id/subtitle"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" >
+
+        <!-- CONVERTERS -->
+        <Button
+            android:id="@+id/converter_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/convert_text"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <!-- ARROW ACTIVITY -->
+        <Button
+            android:layout_below="@id/converter_btn"
+            android:layout_marginTop="10dp"
+            android:id="@+id/arrow_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/arrow_text"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <!-- WORD ACTIVITY -->
+        <Button
+            android:layout_below="@+id/arrow_btn"
+            android:layout_marginTop="10dp"
+            android:id="@+id/word_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/word_text"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <!-- LIGHTS OUT ACTIVITY -->
+        <Button
+            android:layout_below="@+id/word_btn"
+            android:layout_marginTop="10dp"
+            android:id="@+id/light_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/light_text"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <!-- SLIDING PUZZLE ACTIVITY -->
+        <Button
+            android:layout_below="@+id/light_btn"
+            android:layout_marginTop="10dp"
+            android:id="@+id/slider_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/slider_text"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
