@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.puzzlesolver.models.Puzzle;
 
 public abstract class PuzzleSolverTemplate extends AppCompatActivity {
     private Puzzle problem;
@@ -29,6 +30,6 @@ public abstract class PuzzleSolverTemplate extends AppCompatActivity {
     //Check if the puzzle has a solution
     public boolean notSolvable()
     {
-        return !puzzle.isSolvable();
+        return !problem.isSolvable();
     }
 }
