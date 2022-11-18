@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MAIN MENU DIMENSIONS -->
+    <dimen name="btn_margin">25dp</dimen>
+    <dimen name="title_margin">100dp</dimen>
+</resources>
