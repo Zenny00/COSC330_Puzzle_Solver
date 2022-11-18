@@ -50,19 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp" />
 
-        <!-- ARROW ACTIVITY -->
-        <Button
-            android:layout_below="@id/converter_btn"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:id="@+id/arrow_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/arrow_text"
-            android:layout_width="match_parent"
-            android:layout_height="75dp" />
-
         <!-- WORD ACTIVITY -->
         <Button
-            android:layout_below="@+id/arrow_btn"
+            android:layout_below="@+id/converter_btn"
             android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/word_btn"
             android:layout_centerHorizontal="true"

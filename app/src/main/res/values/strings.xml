@@ -5,7 +5,6 @@
     <string name="menu_title">Dead Frontier 2</string>
     <string name="subtitle">Puzzle Solver</string>
     <string name="convert_text">Converters</string>
-    <string name="arrow_text">Arrow Puzzle</string>
     <string name="word_text">Word Problem</string>
     <string name="light_text">Lights Out</string>
     <string name="slider_text">Picture Slider</string>
