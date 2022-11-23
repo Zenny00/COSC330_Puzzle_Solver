@@ -8,6 +8,9 @@ import com.maltaisn.icondialog.pack.IconPack;
 import com.maltaisn.icondialog.pack.IconPackLoader;
 import com.maltaisn.iconpack.fa.IconPackFa;
 
+import java.util.Collections;
+import java.util.Locale;
+
 public class ConverterState extends Application {
 
     @Nullable
@@ -31,7 +34,8 @@ public class ConverterState extends Application {
         IconPackLoader loader = new IconPackLoader(this);
 
         // Create an icon pack and load all drawables.
-        iconPack = IconPackFa.createFontAwesomeIconPack(loader);
+        //iconPack = IconPackFa.createFontAwesomeIconPack(loader);
+        IconPack iconPack = loader.load(R.xml.icons, R.xml.tags, Collections.singletonList(Locale.ENGLISH), null);
         iconPack.loadDrawables(loader.getDrawableLoader());
 
         return iconPack;
