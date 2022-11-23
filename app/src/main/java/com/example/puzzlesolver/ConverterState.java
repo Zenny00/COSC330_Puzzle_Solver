@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 
 import com.maltaisn.icondialog.pack.IconPack;
 import com.maltaisn.icondialog.pack.IconPackLoader;
-import com.maltaisn.iconpack.defaultpack.IconPackDefault;
+import com.maltaisn.iconpack.fa.IconPackFa;
 
 public class ConverterState extends Application {
 
@@ -31,7 +31,7 @@ public class ConverterState extends Application {
         IconPackLoader loader = new IconPackLoader(this);
 
         // Create an icon pack and load all drawables.
-        iconPack = IconPackDefault.createDefaultIconPack(loader);
+        iconPack = IconPackFa.createFontAwesomeIconPack(loader);
         iconPack.loadDrawables(loader.getDrawableLoader());
 
         return iconPack;
