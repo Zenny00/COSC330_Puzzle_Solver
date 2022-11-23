@@ -8,15 +8,21 @@
     android:layout_height="match_parent">
 
     <!-- INTERIOR LAYOUT TO HOLD ALL PUZZLE ELEMENTS -->
-    <RelativeLayout
+    <!-- HOLDS THE LOCK ICON -->
+    <ImageView
+        android:id="@+id/lock_image"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="500dp" />
+
+    <!-- LAUNCHES CONVERTER ACTIVITY -->
+    <Button
+        android:id="@+id/open_btn"
+        android:layout_below="@id/lock_image"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:text="@string/open_btn_text" />
 
-        <!-- HOLDS THE LOCK ICON -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </RelativeLayout>
 
 </RelativeLayout>

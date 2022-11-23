@@ -8,4 +8,8 @@
     <string name="word_text">Word Problem</string>
     <string name="light_text">Lights Out</string>
     <string name="slider_text">Picture Slider</string>
+
+    <!-- CONVERTER ITEMS -->
+    <string name="open_btn_text">Open Icon Dialog</string>
+
 </resources>
