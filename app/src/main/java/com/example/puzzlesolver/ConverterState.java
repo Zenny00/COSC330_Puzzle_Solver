@@ -8,7 +8,7 @@ import com.maltaisn.icondialog.pack.IconPack;
 import com.maltaisn.icondialog.pack.IconPackLoader;
 import com.maltaisn.iconpack.defaultpack.IconPackDefault;
 
-public class App extends Application {
+public class ConverterState extends Application {
 
     @Nullable
     private IconPack iconPack;

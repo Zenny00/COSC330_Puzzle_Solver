@@ -40,7 +40,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     @Nullable
     @Override
     public IconPack getIconDialogIconPack() {
-        return ((App) getApplication()).getIconPack();
+        return ((ConverterState) getApplication()).getIconPack();
     }
 
     @Override
