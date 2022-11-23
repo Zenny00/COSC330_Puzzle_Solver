@@ -2,6 +2,7 @@ package com.example.puzzlesolver;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,11 +20,15 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
+    private TextView puzzle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.converter_layout);
 
+        //Get puzzle view component
+        puzzle = (TextView) findViewById(R.id.puzzle_input);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
@@ -45,14 +50,21 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     @Override
     public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
-        // Show a toast with the list of selected icon IDs.
         StringBuilder sb = new StringBuilder();
         for (Icon icon : icons) {
             sb.append(icon.getId());
             sb.append(", ");
         }
-        sb.delete(sb.length() - 2, sb.length());
-        Toast.makeText(this, "Icons selected: " + sb, Toast.LENGTH_SHORT).show();
+
+        //Check if values have been placed yet
+        String prev = puzzle.getText().toString();
+        if (prev.equals("____ ____ ____ ____ ____"))
+            puzzle.setText(sb + " ");
+        else
+            puzzle.setText(prev + sb + " ");
+
+        //sb.delete(sb.length() - 2, sb.length());
+        //Toast.makeText(this, "Icons selected: " + sb, Toast.LENGTH_SHORT).show();
     }
 
     @Override

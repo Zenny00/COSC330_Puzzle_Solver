@@ -3,4 +3,7 @@
     <!-- MAIN MENU DIMENSIONS -->
     <dimen name="btn_margin">25dp</dimen>
     <dimen name="title_margin">150dp</dimen>
+
+    <!-- CONVERT DIMENSIONS -->
+    <dimen name="puzzle_margin">100dp</dimen>
 </resources>

@@ -9,7 +9,8 @@
     <string name="light_text">Lights Out</string>
     <string name="slider_text">Picture Slider</string>
 
-    <!-- CONVERTER ITEMS -->
+    <!-- CONVERTER STRINGS -->
     <string name="open_btn_text">Open Icon Dialog</string>
+    <string name="default_puzzle">____ ____ ____ ____ ____</string>
 
 </resources>
