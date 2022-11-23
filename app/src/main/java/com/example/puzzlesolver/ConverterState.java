@@ -6,7 +6,6 @@ import androidx.annotation.Nullable;
 
 import com.maltaisn.icondialog.pack.IconPack;
 import com.maltaisn.icondialog.pack.IconPackLoader;
-import com.maltaisn.iconpack.fa.IconPackFa;
 
 import java.util.Collections;
 import java.util.Locale;
