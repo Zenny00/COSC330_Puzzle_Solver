@@ -8,15 +8,25 @@
     <tag name="down">Down</tag>
 
     <!-- NUMBER TAGS -->
-    <tag name="number">Up</tag>
-    <tag name="one">Down</tag>
-    <tag name="two">Down</tag>
-    <tag name="three">Down</tag>
-    <tag name="four">Down</tag>
-    <tag name="five">Down</tag>
-    <tag name="six">Down</tag>
-    <tag name="seven">Down</tag>
-    <tag name="eight">Down</tag>
-    <tag name="nine">Down</tag>
-    <tag name="zero">Down</tag>
+    <tag name="number">number</tag>
+    <tag name="one">one</tag>
+    <tag name="two">two</tag>
+    <tag name="three">three</tag>
+    <tag name="four">four</tag>
+    <tag name="five">five</tag>
+    <tag name="six">six</tag>
+    <tag name="seven">seven</tag>
+    <tag name="eight">eight</tag>
+    <tag name="nine">nine</tag>
+    <tag name="zero">zero</tag>
+    <tag name="1">1</tag>
+    <tag name="2">2</tag>
+    <tag name="3">3</tag>
+    <tag name="4">4</tag>
+    <tag name="5">5</tag>
+    <tag name="6">6</tag>
+    <tag name="7">7</tag>
+    <tag name="8">8</tag>
+    <tag name="9">9</tag>
+    <tag name="0">0</tag>
 </tags>
