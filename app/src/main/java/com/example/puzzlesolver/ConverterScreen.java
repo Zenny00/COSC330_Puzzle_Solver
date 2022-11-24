@@ -2,6 +2,7 @@ package com.example.puzzlesolver;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
     private TextView puzzle;
+    private ImageView lock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
         //Get puzzle view component
         puzzle = (TextView) findViewById(R.id.puzzle_input);
+
+        //Get lock view component
+        lock = (ImageView) findViewById(R.id.lock_image);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
@@ -53,8 +58,11 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         StringBuilder sb = new StringBuilder();
         for (Icon icon : icons) {
             sb.append(icon.getId());
-            sb.append(", ");
+            sb.append(" ");
         }
+
+        for (Icon icon : icons)
+            lock.setImageDrawable(icon.getDrawable());
 
         //Check if values have been placed yet
         String prev = puzzle.getText().toString();
