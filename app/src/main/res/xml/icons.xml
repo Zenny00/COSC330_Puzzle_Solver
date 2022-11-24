@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <icons width="24" height="24">
+    <!-- ARROW ICONS -->
     <category id="0" name="Arrows">
         <icon id="0" tags="arrow,left" path="M20,10V14H11L14.5,17.5L12.08,19.92L4.16,12L12.08,4.08L14.5,6.5L11,10H20Z"/>
         <icon id="1" tags="arrow,right" path="M4,10V14H13L9.5,17.5L11.92,19.92L19.84,12L11.92,4.08L9.5,6.5L13,10H4Z"/>
         <icon id="2" tags="arrow,up" path="M14,20H10V11L6.5,14.5L4.08,12.08L12,4.16L19.92,12.08L17.5,14.5L14,11V20Z"/>
         <icon id="3" tags="arrow,down" path="M10,4H14V13L17.5,9.5L19.92,11.92L12,19.84L4.08,11.92L6.5,9.5L10,13V4Z"/>
+    </category>
+
+    <!-- NUMBER ICONS -->
+    <category id="1" name="Numbers">
+        <icon id="4" tags="number, 0" path="M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9Z"/>
+        <icon id="5" tags="number, 1" path="M10,7V9H12V17H14V7H10Z"/>
+        <icon id="6" tags="number, 2" path=" M9,7V9H13V11H11A2,2 0 0,0 9,13V17H11L15,17V15H11V13H13A2,2 0 0,0 15,11V9A2,2 0 0,0 13,7H9Z"/>
+        <icon id="7" tags="number, 3" path="M15,15V13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 15,10.5V9C15,7.89 14.1,7 13,7H9V9H13V11H11V13H13V15H9V17H13A2,2 0 0,0 15,15"/>
+        <icon id="8" tags="number, 4" path="M9,7V13H13V17H15V7H13V11H11V7H9Z"/>
+        <icon id="9" tags="number, 5" path="M9,7V13H13V15H9V17H13A2,2 0 0,0 15,15V13A2,2 0 0,0 13,11H11V9H15V7H9Z"/>
+        <icon id="10" tags="number, 6" path="M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V13A2,2 0 0,0 13,11H11V9H15V7H11M11,13H13V15H11V13Z"/>
+        <icon id="11" tags="number, 7" path="M11,17L15,9V7H9V9H13L9,17"/>
+        <icon id="12" tags="number, 8" path="M11,13H13V15H11M11,9H13V11H11M11,17H13A2,2 0 0,0 15,15V13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 15,10.5V9C15,7.89 14.1,7 13,7H11A2,2 0 0,0 9,9V10.5A1.5,1.5 0 0,0 10.5,12A1.5,1.5 0 0,0 9,13.5V15C9,16.11 9.9,17 11,17"/>
+        <icon id="13" tags="number, 9" path="M13,17A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11A2,2 0 0,0 9,9V11A2,2 0 0,0 11,13H13V15H9V17H13M13,11H11V9H13V11Z"/>
     </category>
 </icons>

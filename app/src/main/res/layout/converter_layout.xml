@@ -19,14 +19,17 @@
         <ImageView
             android:id="@+id/puzzle_input"
             android:layout_marginTop="@dimen/puzzle_margin"
+            android:background="@color/background_gray"
+            android:padding="1dp"
             android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="@dimen/puzzle_input_width"
+            android:layout_height="@dimen/puzzle_input_height" />
 
         <!-- HOLDS THE LOCK ICON -->
         <ImageView
             android:id="@+id/lock_icon"
             android:layout_below="@id/puzzle_input"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/puzzle_margin"
             android:src="@drawable/lock_img"
             android:layout_width="wrap_content"

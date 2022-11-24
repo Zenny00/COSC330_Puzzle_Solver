@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tags>
+    <!-- ARROW TAGS -->
     <tag name="arrow">Arrow</tag>
     <tag name="left">Left</tag>
     <tag name="right">Right</tag>
     <tag name="up">Up</tag>
     <tag name="down">Down</tag>
+
+    <!-- NUMBER TAGS -->
+    <tag name="number">Up</tag>
+    <tag name="one">Down</tag>
+    <tag name="two">Down</tag>
+    <tag name="three">Down</tag>
+    <tag name="four">Down</tag>
+    <tag name="five">Down</tag>
+    <tag name="six">Down</tag>
+    <tag name="seven">Down</tag>
+    <tag name="eight">Down</tag>
+    <tag name="nine">Down</tag>
+    <tag name="zero">Down</tag>
 </tags>

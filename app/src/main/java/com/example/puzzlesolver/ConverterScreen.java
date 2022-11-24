@@ -1,7 +1,9 @@
 package com.example.puzzlesolver;
 
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -69,8 +71,8 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         //Append the image to the current image
         //This code must be placed inside this block to ensure compatibility, may be changed later
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            appended_img.setLayerInsetRight(0, icons.get(0).getDrawable().getIntrinsicWidth() * 2);
-            appended_img.setLayerGravity(1, Gravity.CENTER_HORIZONTAL);
+            appended_img.setLayerInsetRight(0, icons.get(0).getDrawable().getIntrinsicWidth());
+            appended_img.setLayerGravity(1, Gravity.AXIS_PULL_AFTER);
         }
 
         //Set the image
