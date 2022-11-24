@@ -78,10 +78,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         //Set the image
         lock.setImageDrawable(appended_img);
 
-        //Check if values have been placed yet
-
-        //sb.delete(sb.length() - 2, sb.length());
-        //Toast.makeText(this, "Icons selected: " + sb, Toast.LENGTH_SHORT).show();
+        //Append icon value to end of input string
     }
 
     @Override
