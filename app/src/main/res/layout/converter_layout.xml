@@ -11,33 +11,33 @@
 
     <RelativeLayout
         android:id="@+id/puzzle_layout"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
+        <!-- USER INPUT IS DISPLAYED HERE -->
+        <ImageView
             android:id="@+id/puzzle_input"
             android:layout_marginTop="@dimen/puzzle_margin"
             android:layout_centerHorizontal="true"
-            android:text="@string/default_puzzle"
-            android:textColor="@color/black"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <!-- HOLDS THE LOCK ICON -->
         <ImageView
-            android:id="@+id/lock_image"
-            android:layout_marginTop="@dimen/puzzle_margin"
+            android:id="@+id/lock_icon"
             android:layout_below="@id/puzzle_input"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/puzzle_margin"
+            android:src="@drawable/lock_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <!-- LAUNCHES CONVERTER ACTIVITY -->
         <Button
             android:id="@+id/open_btn"
-            android:layout_below="@id/lock_image"
+            android:layout_below="@id/lock_icon"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/btn_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/open_btn_text" />

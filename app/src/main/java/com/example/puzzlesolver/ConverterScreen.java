@@ -1,6 +1,10 @@
 package com.example.puzzlesolver;
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,17 +27,15 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     private TextView puzzle;
     private ImageView lock;
+    private Drawable icon_tray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.converter_layout);
 
-        //Get puzzle view component
-        puzzle = (TextView) findViewById(R.id.puzzle_input);
-
         //Get lock view component
-        lock = (ImageView) findViewById(R.id.lock_image);
+        lock = (ImageView) findViewById(R.id.puzzle_input);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
@@ -61,15 +63,20 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
             sb.append(" ");
         }
 
-        for (Icon icon : icons)
-            lock.setImageDrawable(icon.getDrawable());
+        //Drawable image will store the current image and the new image to be appended
+        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { lock.getDrawable(), icons.get(0).getDrawable() });
+
+        //Append the image to the current image
+        //This code must be placed inside this block to ensure compatibility, may be changed later
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            appended_img.setLayerInsetRight(0, icons.get(0).getDrawable().getIntrinsicWidth() * 2);
+            appended_img.setLayerGravity(1, Gravity.CENTER_HORIZONTAL);
+        }
+
+        //Set the image
+        lock.setImageDrawable(appended_img);
 
         //Check if values have been placed yet
-        String prev = puzzle.getText().toString();
-        if (prev.equals("____ ____ ____ ____ ____"))
-            puzzle.setText(sb + " ");
-        else
-            puzzle.setText(prev + sb + " ");
 
         //sb.delete(sb.length() - 2, sb.length());
         //Toast.makeText(this, "Icons selected: " + sb, Toast.LENGTH_SHORT).show();
