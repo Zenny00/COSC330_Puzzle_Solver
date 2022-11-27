@@ -6,7 +6,9 @@ import android.graphics.drawable.LayerDrawable;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.puzzlesolver.models.Puzzle;
+import com.example.puzzlesolver.models.factories.ConverterFactory;
+import com.example.puzzlesolver.models.factories.PuzzleFactory;
 import com.maltaisn.icondialog.IconDialog;
 import com.maltaisn.icondialog.IconDialogSettings;
 import com.maltaisn.icondialog.data.Icon;
@@ -27,17 +32,35 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
-    private TextView puzzle;
+    private TextView puzzle_output;
     private ImageView lock;
     private Drawable icon_tray;
+    private Button solve_btn;
+    private StringBuilder sb;
+    private PuzzleFactory puzzleFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.converter_layout);
 
+        //Initialize new puzzle factory for converters
+        puzzleFactory = new ConverterFactory();
+
+        //Initialize StringBuilder
+        sb = new StringBuilder();
+
+        //Get solve button from view
+        solve_btn = (Button) findViewById(R.id.solve_puzzle);
+
+        //Get text view for solution output
+        puzzle_output = (TextView) findViewById(R.id.puzzle_solution);
+
         //Get lock view component
         lock = (ImageView) findViewById(R.id.puzzle_input);
+
+        //Setup new button listener
+        solve_btn.setOnClickListener(solve_listener);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
@@ -59,7 +82,8 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     @Override
     public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
-        StringBuilder sb = new StringBuilder();
+
+        //Append icon to end of string
         for (Icon icon : icons) {
             sb.append(icon.getId());
             sb.append(" ");
@@ -77,9 +101,32 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
         //Set the image
         lock.setImageDrawable(appended_img);
-
-        //Append icon value to end of input string
     }
+
+    //Solve puzzle on click listener
+    private View.OnClickListener solve_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //Get puzzle input
+            String puzzle_input = sb.toString();
+            Log.d("Puzzle", puzzle_input);
+
+            //Convert puzzle input to puzzle
+            Puzzle puzzle = puzzleFactory.createPuzzle(puzzle_input);
+            if (puzzle != null)
+                Log.d("Puzzle Type", puzzle.getClass().toString());
+
+            //Check if a puzzle was found
+            if (puzzle == null)
+                puzzle_output.setText("Solution not found!");
+            else
+            {
+                //If puzzle was found setup the problem and find a solution
+                puzzle.setProblem(puzzle_input);
+                puzzle_output.setText(puzzle.findSolution());
+            }
+        }
+    };
 
     @Override
     public void onIconDialogCancelled() {}

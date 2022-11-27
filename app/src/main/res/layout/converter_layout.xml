@@ -25,6 +25,15 @@
             android:layout_width="@dimen/puzzle_input_width"
             android:layout_height="@dimen/puzzle_input_height" />
 
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/puzzle_solution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/puzzle_input"
+            android:layout_marginTop="25dp" />
+
         <!-- HOLDS THE LOCK ICON -->
         <ImageView
             android:id="@+id/lock_icon"
@@ -45,5 +54,14 @@
             android:layout_height="wrap_content"
             android:text="@string/open_btn_text" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/solve_puzzle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/puzzle_input_height"
+        android:layout_below="@id/puzzle_layout"
+        android:text="@string/solve_btn_text" />
 
 </RelativeLayout>
