@@ -4,8 +4,10 @@
     <dimen name="btn_margin">25dp</dimen>
     <dimen name="title_margin">150dp</dimen>
 
-    <!-- CONVERT DIMENSIONS -->
+    <!-- CONVERTER DIMENSIONS -->
     <dimen name="puzzle_margin">25dp</dimen>
     <dimen name="puzzle_input_width">300dp</dimen>
     <dimen name="puzzle_input_height">35dp</dimen>
+    <dimen name="button_width">200dp</dimen>
+    <dimen name="button_height">65dp</dimen>
 </resources>
