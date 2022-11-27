@@ -1,14 +1,23 @@
 package com.example.puzzlesolver;
 
+import android.media.Image;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.puzzlesolver.models.LightsOutPuzzle;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LightsOutActivity extends PuzzleSolverTemplate{
+    private final int MAX_ROWS = 6;
+    private final int MAX_COLS = 6;
+
     // protected Puzzle problem; from super
     private TextView outputTV;
     private TextInputEditText rowInput, colInput;
@@ -25,12 +34,40 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
     // ABSTRACT FUNCTIONS FROM TEMPLATE
     @Override
     public void readProblem() {
+        String rows = rowInput.getText().toString();
+        String cols = colInput.getText().toString();
+        int numRows = MAX_ROWS + 1, numCols = MAX_COLS + 1;
+
+        if (!(rows.contentEquals("") || cols.contentEquals(""))) {
+            numRows = Integer.parseInt(rowInput.getText().toString());
+            numCols = Integer.parseInt(colInput.getText().toString());
+        }
+        String puzzle = String.valueOf(numRows) + numCols;
+
+        final boolean OUT_OF_BOUNDS_RIGHT = numRows > MAX_ROWS || numCols > MAX_COLS;
+        final boolean OUT_OF_BOUNDS_LEFT = numRows < 0 || numCols < 0;
+        if (!(OUT_OF_BOUNDS_LEFT || OUT_OF_BOUNDS_RIGHT)) {
+            for (int i = 0; i < numRows; i++) {
+                TableRow row = (TableRow) lightGrid.getChildAt(i);
+                for (int j = 0; j < numCols; j++) {
+                    ImageButton btn = (ImageButton) row.getChildAt(j);
+                    if (btn.getContentDescription().equals("ON"))
+                        puzzle += "1";
+                    else
+                        puzzle += "0";
+                }
+            }
+        }
+        problem.setProblem(puzzle);
     }
     @Override
     public void outputError() {
+        // TODO: Make this better with animations
+        outputTV.setText(R.string.app_name);
     }
     @Override
     public void outputSolution() {
+        outputTV.setText(problem.findSolution());
     }
 
     // BUTTON FUNCTIONS
@@ -39,6 +76,46 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
     }
     public void callSolver(View view) {
         solveProblem();
+    }
+    public void toggleBtn(View view) {
+        if (((ImageButton) view).getContentDescription().toString().contentEquals("ON")) {
+            ((ImageButton) view).setContentDescription("OFF");
+            ((ImageButton) view).setImageResource(R.drawable.lights_off);
+        } else {
+            ((ImageButton) view).setContentDescription("ON");
+            ((ImageButton) view).setImageResource(R.drawable.lights_on);
+        }
+    }
+    public void setDisabled(View view) {
+        String column = colInput.getText().toString();
+        String row = rowInput.getText().toString();
+
+        int numCols = 6, numRows = 6;
+        if (!column.contentEquals("")
+            && Integer.parseInt(column) > 0
+            && Integer.parseInt(column) < 7)
+            numCols = Integer.parseInt(column);
+        if (!row.contentEquals("")
+                && Integer.parseInt(row) > 0
+                && Integer.parseInt(row) < 7)
+            numRows = Integer.parseInt(row);
+
+        for (int i = 0; i < MAX_ROWS; i++) {
+            TableRow tableRow = (TableRow) lightGrid.getChildAt(i);
+            for (int j = 0; j < MAX_COLS; j++) {
+                ImageButton btn = (ImageButton) tableRow.getChildAt(j);
+                if (i >= numRows || j >= numCols) {
+                    btn.setClickable(false);
+                    btn.setContentDescription("DISABLED");
+                    btn.setImageResource(R.drawable.lights_disabled);
+                } else if (btn.getContentDescription().equals("DISABLED")) {
+                    btn.setClickable(true);
+                    btn.setContentDescription("OFF");
+                    btn.setImageResource(R.drawable.lights_off);
+                }
+            }
+        }
+
     }
 
     // HELPER FUNCTIONS

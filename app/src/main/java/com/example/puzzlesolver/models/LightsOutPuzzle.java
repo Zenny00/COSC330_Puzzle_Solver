@@ -1,36 +1,45 @@
 package com.example.puzzlesolver.models;
 
+
+
 public class LightsOutPuzzle implements Puzzle{
-    private boolean[][] puzzleMatrix;
+    private boolean[] puzzleVector;
     private int M, N;
 
     @Override
     public boolean isSolvable() {
-        // TODO: implement a checking system
+        if (M < 0 || M > 6)
+            return false;
+        if (N < 0 || N > 6)
+            return false;
         return true;
     }
     @Override
-    public void setProblem(String input) {
-        // TODO: need to decide how to read in information
-        M = 3; // placeholder values
-        N = 3;
+    public void setProblem(String problem) {
+        M = Integer.parseInt(String.valueOf(problem.charAt(0)));
+        N = Integer.parseInt(String.valueOf(problem.charAt(1)));
 
-        // TODO: should set puzzle matrix with true/false
-        puzzleMatrix = new boolean[M][N];
-        for (int i = 0; i < M; i++)
-            for (int j = 0; j < N; j++) {
-                puzzleMatrix[i][j] = false;
-            }
-
+        if (isSolvable()) {
+            puzzleVector = new boolean[M * N];
+            for (int i = 2; i < problem.length(); i++)
+                if (problem.charAt(i) == '1') {
+                    puzzleVector[i-2] = true;
+                } else if (problem.charAt(i) == '0') {
+                    puzzleVector[i-2] = false;
+                }
+        }
     }
     @Override
     public String findSolution() {
         //boolean[][] toggle = makeToggleMatrix();
-        //boolean[] puzzleVector = linearizePuzzle(puzzleMatrix);
         //boolean[] solutionVector = solzePuzzle(toggle, puzzleVector);
         //return makeCleanString(solutionVector);
-        return null;
+        return "PRESS THE FOLLOWING BUTTONS\n1 1 1\n0 1 0\n1 1 1";
     }
 
     // HELPER FUNCTIONS
+    public void setDimensions(int rows, int cols) {
+        M = rows;
+        N = cols;
+    }
 }
