@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.puzzlesolver.models.Puzzle;
 
 public abstract class PuzzleSolverTemplate extends AppCompatActivity {
-    private Puzzle problem;
+    protected Puzzle problem;
 
     //Find solution to the puzzle
     public final void solveProblem()

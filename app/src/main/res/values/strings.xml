@@ -8,4 +8,10 @@
     <string name="word_text">Word Problem</string>
     <string name="light_text">Lights Out</string>
     <string name="slider_text">Picture Slider</string>
+
+    <!-- LIGHTS OUT ITEMS -->
+    <string name="num_rows">rows</string>
+    <string name="num_cols">columns</string>
+    <string name="submit_btn">submit</string>
+    <string name="exit_btn">return</string>
 </resources>

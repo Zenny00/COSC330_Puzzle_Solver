@@ -45,40 +45,44 @@
         <!-- CONVERTERS -->
         <Button
             android:id="@+id/converter_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/convert_text"
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="launchConverterActivity"
+            android:text="@string/convert_text" />
 
         <!-- WORD ACTIVITY -->
         <Button
-            android:layout_below="@+id/converter_btn"
-            android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/word_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/word_text"
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="75dp"
+            android:layout_below="@+id/converter_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/btn_margin"
+            android:onClick="launchWordActivity"
+            android:text="@string/word_text" />
 
         <!-- LIGHTS OUT ACTIVITY -->
         <Button
-            android:layout_below="@+id/word_btn"
-            android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/light_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/light_text"
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="75dp"
+            android:layout_below="@+id/word_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/btn_margin"
+            android:onClick="launchLightsActivity"
+            android:text="@string/light_text" />
 
         <!-- SLIDING PUZZLE ACTIVITY -->
         <Button
-            android:layout_below="@+id/light_btn"
-            android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/slider_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/slider_text"
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="75dp"
+            android:layout_below="@+id/light_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/btn_margin"
+            android:onClick="launchSliderActivity"
+            android:text="@string/slider_text" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -27,6 +27,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <!-- LIGHTS OUT -->
+        <activity android:name=".LightsOutActivity" />
     </application>
 
 </manifest>
