@@ -3,9 +3,9 @@
 <!-- LAYOUT CONFIGURATION -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/white"
+    android:background="@color/puzzle_background_gray"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
     <!-- INTERIOR LAYOUT TO HOLD ALL PUZZLE ELEMENTS -->
 
@@ -16,23 +16,15 @@
         android:layout_height="wrap_content" >
 
         <!-- USER INPUT IS DISPLAYED HERE -->
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/puzzle_input"
             android:layout_marginTop="@dimen/puzzle_margin"
-            android:background="@color/background_gray"
+            android:background="@color/input_background_gray"
+            android:tint="@color/button_text"
             android:padding="1dp"
             android:layout_centerHorizontal="true"
             android:layout_width="@dimen/puzzle_input_width"
             android:layout_height="@dimen/puzzle_input_height" />
-
-        <TextView
-            android:textColor="@color/black"
-            android:id="@+id/puzzle_solution"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/puzzle_input"
-            android:layout_marginTop="25dp" />
 
         <!-- HOLDS THE LOCK ICON -->
         <ImageView
@@ -47,6 +39,8 @@
         <!-- LAUNCHES CONVERTER ACTIVITY -->
         <Button
             android:id="@+id/open_btn"
+            android:backgroundTint="@color/button_red"
+            android:textColor="@color/button_text"
             android:layout_below="@id/lock_icon"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/btn_margin"
@@ -55,13 +49,26 @@
             android:text="@string/open_btn_text" />
     </RelativeLayout>
 
+    <TextView
+        android:textColor="@color/button_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/puzzle_solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/puzzle_layout"
+        android:layout_marginTop="25dp"
+        android:text="@string/puzzle_solution"/>
+
     <Button
         android:id="@+id/solve_puzzle"
+        android:backgroundTint="@color/button_red"
+        android:textColor="@color/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/puzzle_input_height"
-        android:layout_below="@id/puzzle_layout"
+        android:layout_below="@id/puzzle_solution"
         android:text="@string/solve_btn_text" />
 
 </RelativeLayout>

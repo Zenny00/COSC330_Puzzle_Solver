@@ -1,9 +1,7 @@
 package com.example.puzzlesolver;
 
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.example.puzzlesolver.models.Puzzle;
 import com.example.puzzlesolver.models.factories.ConverterFactory;
@@ -33,7 +31,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
     private TextView puzzle_output;
-    private ImageView lock;
+    private AppCompatImageView puzzle_input;
     private Drawable icon_tray;
     private Button solve_btn;
     private StringBuilder sb;
@@ -57,7 +55,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         puzzle_output = (TextView) findViewById(R.id.puzzle_solution);
 
         //Get lock view component
-        lock = (ImageView) findViewById(R.id.puzzle_input);
+        puzzle_input = (AppCompatImageView) findViewById(R.id.puzzle_input);
 
         //Setup new button listener
         solve_btn.setOnClickListener(solve_listener);
@@ -82,7 +80,6 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     @Override
     public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
-
         //Append icon to end of string
         for (Icon icon : icons) {
             sb.append(icon.getId());
@@ -90,7 +87,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         }
 
         //Drawable image will store the current image and the new image to be appended
-        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { lock.getDrawable(), icons.get(0).getDrawable() });
+        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { puzzle_input.getDrawable(), icons.get(0).getDrawable() });
 
         //Append the image to the current image
         //This code must be placed inside this block to ensure compatibility, may be changed later
@@ -100,7 +97,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         }
 
         //Set the image
-        lock.setImageDrawable(appended_img);
+        puzzle_input.setImageDrawable(appended_img);
     }
 
     //Solve puzzle on click listener
@@ -108,22 +105,22 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         @Override
         public void onClick(View view) {
             //Get puzzle input
-            String puzzle_input = sb.toString();
-            Log.d("Puzzle", puzzle_input);
+            String puzzle_input_string = sb.toString();
+            Log.d("Puzzle", puzzle_input_string);
 
             //Convert puzzle input to puzzle
-            Puzzle puzzle = puzzleFactory.createPuzzle(puzzle_input);
+            Puzzle puzzle = puzzleFactory.createPuzzle(puzzle_input_string);
             if (puzzle != null)
                 Log.d("Puzzle Type", puzzle.getClass().toString());
 
             //Check if a puzzle was found
             if (puzzle == null)
-                puzzle_output.setText("Solution not found!");
+                puzzle_output.setText("Solution: " + "Solution not found!");
             else
             {
                 //If puzzle was found setup the problem and find a solution
-                puzzle.setProblem(puzzle_input);
-                puzzle_output.setText(puzzle.findSolution());
+                puzzle.setProblem(puzzle_input_string);
+                puzzle_output.setText("Solution: " + puzzle.findSolution());
             }
         }
     };

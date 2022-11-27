@@ -5,7 +5,7 @@
     <dimen name="title_margin">150dp</dimen>
 
     <!-- CONVERT DIMENSIONS -->
-    <dimen name="puzzle_margin">80dp</dimen>
+    <dimen name="puzzle_margin">25dp</dimen>
     <dimen name="puzzle_input_width">300dp</dimen>
     <dimen name="puzzle_input_height">35dp</dimen>
 </resources>

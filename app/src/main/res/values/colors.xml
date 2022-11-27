@@ -8,5 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="background_gray">#7B7B7B</color>
+    <!-- BACKGROUND COLORS -->
+    <color name="puzzle_background_gray">#464541</color>
+    <color name="input_background_gray">#1D1F21</color>
+
+    <!-- PUZZLE COLOR VALUES -->
+    <color name="button_red">#82181D</color>
+    <color name="button_text">#F3D6CD</color>
 </resources>

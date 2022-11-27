@@ -20,25 +20,15 @@ public class BinaryPuzzle implements Puzzle {
         //Convert values
         for (int j = 0; j < binary_values.length; j++)
         {
+            //Get current string
             String binary = binary_values[j];
-            /*
-            for (int i = 0; i < binary.length(); i++) {
-                //Replace 5s with 0s
-                if (binary.charAt(i) == '5')
-                    binary = binary.substring(0, i) + '0' + binary.substring(i + 1);
-                //Replace 6s with 1s
-                else if (binary.charAt(i) == '6')
-                    binary = binary.substring(0, i) + '1' + binary.substring(i + 1);
-                //Remove spaces
-                else if (binary.charAt(i) == ' ')
-                    binary = binary.substring(0, i) + binary.substring(i + 1);
-            }
-             */
 
+            //Replace icon ids with their corresponding values
             binary = binary.replace('5', '0');
             binary = binary.replace('6', '1');
             binary = binary.replace(" ", "");
 
+            //Replace the string at the given index
             binary_values[j] = binary;
         }
     }

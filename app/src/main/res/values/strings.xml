@@ -12,6 +12,6 @@
     <!-- CONVERTER STRINGS -->
     <string name="open_btn_text">Open Icon Dialog</string>
     <string name="solve_btn_text">Solve Puzzle</string>
-    <string name="default_puzzle">____ ____ ____ ____ ____</string>
+    <string name="puzzle_solution">Solution: </string>
 
 </resources>
