@@ -7,7 +7,16 @@ public class BinaryPuzzle implements Puzzle {
 
     @Override
     public boolean isSolvable() {
-        return true;
+        boolean isSolvable = false;
+
+        //Check if there is at least one non empty String
+        for (String binary : binary_values)
+        {
+            if (!binary.equals(""))
+                isSolvable = true;
+        }
+
+        return isSolvable;
     }
 
     @Override

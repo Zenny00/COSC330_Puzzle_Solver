@@ -115,12 +115,18 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
             //Check if a puzzle was found
             if (puzzle == null)
-                puzzle_output.setText("Solution: " + "None Found!");
+                puzzle_output.setText("Solution: " + "Invalid Puzzle!");
             else
             {
                 //If puzzle was found setup the problem and find a solution
                 puzzle.setProblem(puzzle_input_string);
-                puzzle_output.setText("Solution: " + puzzle.findSolution());
+
+                //Once the puzzle is setup does it have a solution?
+                //If not print a error message
+                if (puzzle.findSolution() == null)
+                    puzzle_output.setText("Solution: " + "None Found!");
+                else
+                    puzzle_output.setText("Solution: " + puzzle.findSolution());
             }
         }
     };
