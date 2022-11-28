@@ -30,6 +30,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
+    //Private data members to hold view components
     private TextView puzzle_output;
     private AppCompatImageView puzzle_input;
     private Drawable icon_tray;
@@ -80,7 +81,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     @Override
     public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
-        //Append icon to end of string
+        //Append icon id to end of string
         for (Icon icon : icons) {
             sb.append(icon.getId());
             sb.append(" ");
@@ -104,16 +105,13 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private View.OnClickListener solve_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //Get puzzle input
+            //Get puzzle input string from the StringBuilder
             String puzzle_input_string = sb.toString();
-            Log.d("Puzzle", puzzle_input_string);
 
             //Convert puzzle input to puzzle
             Puzzle puzzle = puzzleFactory.createPuzzle(puzzle_input_string);
-            if (puzzle != null)
-                Log.d("Puzzle Type", puzzle.getClass().toString());
 
-            //Check if a puzzle was found
+            //Check if a puzzle matching the input was found, if not print an error message
             if (puzzle == null)
                 puzzle_output.setText("Solution: " + "Invalid Puzzle!");
             else
@@ -122,7 +120,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
                 puzzle.setProblem(puzzle_input_string);
 
                 //Once the puzzle is setup does it have a solution?
-                //If not print a error message
+                //If not print an error message
                 if (puzzle.findSolution() == null)
                     puzzle_output.setText("Solution: " + "None Found!");
                 else
