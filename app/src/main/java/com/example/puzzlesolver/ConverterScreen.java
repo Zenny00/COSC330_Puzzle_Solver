@@ -32,11 +32,22 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     //Private data members to hold view components
     private TextView puzzle_output;
-    private AppCompatImageView puzzle_input;
+
+    //Holds references to the four puzzle inputs
+    private AppCompatImageView puzzle_input_1;
+    private AppCompatImageView puzzle_input_2;
+    private AppCompatImageView puzzle_input_3;
+    private AppCompatImageView puzzle_input_4;
+
+    //Holds a reference to the currently accessed image view
+    private AppCompatImageView current_view;
+
     private Drawable icon_tray;
     private Button solve_btn;
     private StringBuilder sb;
     private PuzzleFactory puzzleFactory;
+
+    private IconDialog iconDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,23 +66,46 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         //Get text view for solution output
         puzzle_output = (TextView) findViewById(R.id.puzzle_solution);
 
-        //Get lock view component
-        puzzle_input = (AppCompatImageView) findViewById(R.id.puzzle_input);
+        //Get references to the four puzzle view components
+        puzzle_input_1 = (AppCompatImageView) findViewById(R.id.puzzle_input_1);
+        puzzle_input_2 = (AppCompatImageView) findViewById(R.id.puzzle_input_2);
+        puzzle_input_3 = (AppCompatImageView) findViewById(R.id.puzzle_input_3);
+        puzzle_input_4 = (AppCompatImageView) findViewById(R.id.puzzle_input_4);
 
         //Setup new button listener
         solve_btn.setOnClickListener(solve_listener);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
-        IconDialog iconDialog = dialog != null ? dialog
+        iconDialog = dialog != null ? dialog
                 : IconDialog.newInstance(new IconDialogSettings.Builder().build());
 
+        registerListeners();
+        /*
         Button btn = findViewById(R.id.open_btn);
         btn.setOnClickListener(v -> {
             // Open icon dialog
             iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
         });
+         */
     }
+
+    //Setup "on click" listeners for the image views
+    private void registerListeners()
+    {
+        puzzle_input_1.setOnClickListener(input_tap_listener);
+        puzzle_input_2.setOnClickListener(input_tap_listener);
+        puzzle_input_3.setOnClickListener(input_tap_listener);
+        puzzle_input_4.setOnClickListener(input_tap_listener);
+    }
+
+    private View.OnClickListener input_tap_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            current_view = (AppCompatImageView) view;
+            iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
+        }
+    };
 
     @Nullable
     @Override
@@ -88,7 +122,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         }
 
         //Drawable image will store the current image and the new image to be appended
-        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { puzzle_input.getDrawable(), icons.get(0).getDrawable() });
+        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { current_view.getDrawable(), icons.get(0).getDrawable() });
 
         //Append the image to the current image
         //This code must be placed inside this block to ensure compatibility, may be changed later
@@ -98,7 +132,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         }
 
         //Set the image
-        puzzle_input.setImageDrawable(appended_img);
+        current_view.setImageDrawable(appended_img);
     }
 
     //Solve puzzle on click listener

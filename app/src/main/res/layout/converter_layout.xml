@@ -15,38 +15,76 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
+        <!-- RELATIVE VIEW TO HOLD ALL THE INPUTS -->
         <!-- USER INPUT IS DISPLAYED HERE -->
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/puzzle_input"
-            android:layout_marginTop="@dimen/puzzle_margin"
-            android:background="@color/input_background_gray"
-            android:tint="@color/button_text"
-            android:padding="1dp"
+        <!-- LAUNCHES DIALOG ACTIVITY -->
+        <RelativeLayout
+            android:layout_marginTop="@dimen/puzzle_input_height"
+            android:id="@+id/input_layout"
             android:layout_centerHorizontal="true"
-            android:layout_width="@dimen/puzzle_input_width"
-            android:layout_height="@dimen/puzzle_input_height" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/puzzle_input_1"
+                android:layout_marginTop="@dimen/puzzle_margin"
+                android:background="@color/input_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/button_text"
+                android:padding="1dp"
+                android:layout_width="@dimen/puzzle_input_width"
+                android:layout_height="@dimen/puzzle_input_height" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/puzzle_input_2"
+                android:layout_marginTop="@dimen/puzzle_margin"
+                android:background="@color/input_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/button_text"
+                android:padding="1dp"
+                android:layout_toRightOf="@id/puzzle_input_1"
+                android:layout_marginLeft="@dimen/input_padding"
+                android:layout_width="@dimen/puzzle_input_width"
+                android:layout_height="@dimen/puzzle_input_height" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/puzzle_input_3"
+                android:layout_marginTop="@dimen/puzzle_margin"
+                android:background="@color/input_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/button_text"
+                android:padding="1dp"
+                android:layout_toRightOf="@id/puzzle_input_2"
+                android:layout_marginLeft="@dimen/input_padding"
+                android:layout_width="@dimen/puzzle_input_width"
+                android:layout_height="@dimen/puzzle_input_height" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/puzzle_input_4"
+                android:layout_marginTop="@dimen/puzzle_margin"
+                android:background="@color/input_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/button_text"
+                android:padding="1dp"
+                android:layout_toRightOf="@id/puzzle_input_3"
+                android:layout_marginLeft="@dimen/input_padding"
+                android:layout_width="@dimen/puzzle_input_width"
+                android:layout_height="@dimen/puzzle_input_height" />
+        </RelativeLayout>
 
         <!-- HOLDS THE LOCK ICON -->
         <ImageView
             android:id="@+id/lock_icon"
-            android:layout_below="@id/puzzle_input"
+            android:layout_below="@id/input_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/puzzle_margin"
             android:src="@drawable/lock_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-        <!-- LAUNCHES CONVERTER ACTIVITY -->
-        <Button
-            android:id="@+id/open_btn"
-            android:backgroundTint="@color/button_red"
-            android:textColor="@color/button_text"
-            android:layout_below="@id/lock_icon"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/open_btn_text" />
     </RelativeLayout>
 
     <TextView
