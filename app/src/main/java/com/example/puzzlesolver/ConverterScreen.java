@@ -42,9 +42,16 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     //Holds a reference to the currently accessed image view
     private AppCompatImageView current_view;
 
+    //String for each image view
+    private String input_string_1 = "";
+    private String input_string_2 = "";
+    private String input_string_3 = "";
+    private String input_string_4 = "";
+
+    private int id;
+
     private Drawable icon_tray;
     private Button solve_btn;
-    private StringBuilder sb;
     private PuzzleFactory puzzleFactory;
 
     private IconDialog iconDialog;
@@ -56,9 +63,6 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
         //Initialize new puzzle factory for converters
         puzzleFactory = new ConverterFactory();
-
-        //Initialize StringBuilder
-        sb = new StringBuilder();
 
         //Get solve button from view
         solve_btn = (Button) findViewById(R.id.solve_puzzle);
@@ -99,10 +103,13 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         puzzle_input_4.setOnClickListener(input_tap_listener);
     }
 
-    private View.OnClickListener input_tap_listener = new View.OnClickListener() {
+    //BAD WAY TO DO THIS BUT IT WILL HAVE TO DO FOR NOW
+    private View.OnClickListener input_tap_listener= new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             current_view = (AppCompatImageView) view;
+            id = current_view.getId();
+
             iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
         }
     };
@@ -117,8 +124,21 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
         //Append icon id to end of string
         for (Icon icon : icons) {
-            sb.append(icon.getId());
-            sb.append(" ");
+            switch (id)
+            {
+                case R.id.puzzle_input_1:
+                    input_string_1 += icon.getId() + " ";
+                    break;
+                case R.id.puzzle_input_2:
+                    input_string_2 += icon.getId() + " ";
+                    break;
+                case R.id.puzzle_input_3:
+                    input_string_3 += icon.getId() + " ";
+                    break;
+                case R.id.puzzle_input_4:
+                    input_string_4 += icon.getId() + " ";
+                    break;
+            }
         }
 
         //Drawable image will store the current image and the new image to be appended
@@ -139,11 +159,12 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private View.OnClickListener solve_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //Get puzzle input string from the StringBuilder
-            String puzzle_input_string = sb.toString();
+            //Get puzzle input string from the StringBuilders
+            String input_string = input_string_1.trim() + "-" + input_string_2.trim() + "-" + input_string_3.trim() + "-" + input_string_4.trim();
+            Log.d("Input string: ", input_string);
 
             //Convert puzzle input to puzzle
-            Puzzle puzzle = puzzleFactory.createPuzzle(puzzle_input_string);
+            Puzzle puzzle = puzzleFactory.createPuzzle(input_string);
 
             //Check if a puzzle matching the input was found, if not print an error message
             if (puzzle == null)
@@ -151,7 +172,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
             else
             {
                 //If puzzle was found setup the problem and find a solution
-                puzzle.setProblem(puzzle_input_string);
+                puzzle.setProblem(input_string);
 
                 //Once the puzzle is setup does it have a solution?
                 //If not print an error message

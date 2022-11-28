@@ -2,6 +2,8 @@ package com.example.puzzlesolver.models;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class BinaryPuzzle implements Puzzle {
     String binary_values[];
 
@@ -22,16 +24,13 @@ public class BinaryPuzzle implements Puzzle {
     @Override
     public void setProblem(String input) {
         //Split values on spaces
-        binary_values = input.split("0");
-
-        Log.d("Binary values Length", String.valueOf(binary_values.length));
+        binary_values = input.split("-");
 
         //Convert values
         for (int j = 0; j < binary_values.length; j++)
         {
             //Get current string
             String binary = binary_values[j];
-
             //Replace icon ids with their corresponding values
             binary = binary.replace('5', '0');
             binary = binary.replace('6', '1');
@@ -52,6 +51,7 @@ public class BinaryPuzzle implements Puzzle {
         //Loop through binary values and convert to decimal
         for (int i = 0; i < binary_values.length; i++)
         {
+            Log.d("Binary Strings: ", binary_values[i]);
             String binary = binary_values[i];
             Log.d("Binary", binary);
             //Get the decimal value from the binary and append it to the solution string

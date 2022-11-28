@@ -1,9 +1,10 @@
 package com.example.puzzlesolver.models.factories;
 
 import android.util.Log;
-
 import com.example.puzzlesolver.models.BinaryPuzzle;
 import com.example.puzzlesolver.models.Puzzle;
+
+import java.util.ArrayList;
 
 public class ConverterFactory implements PuzzleFactory {
 
@@ -29,30 +30,38 @@ public class ConverterFactory implements PuzzleFactory {
 
     @Override
     public int findType(String input) {
-        //Split the input string on spaces
-        String input_values[] = input.split(" ");
-        for (String value : input_values)
-            Log.d("puzzle values", value + "\n");
+        //Split on delimiter
+        String input_lines[] = input.split("-");
+
+        ArrayList<String> inputs = new ArrayList<String>();
+
+        for (String line : input_lines)
+        {
+            //Split on spaces
+            String characters[] = line.split(" ");
+            for (String character : characters)
+                inputs.add(character);
+        }
 
         //Puzzle id variable
         int id;
 
         //Check which puzzle the pattern belongs to
-        if (findValue(accepted_binary, input_values))
+        if (findValue(accepted_binary, inputs))
             id = 0; //Binary puzzle
-        else if (findValue(accepted_morse, input_values))
+        else if (findValue(accepted_morse, inputs))
             id = 1; //Morse puzzle
-        else if (findValue(accepted_roman, input_values))
+        else if (findValue(accepted_roman, inputs))
             id = 2; //Roman numeral puzzle
-        else if (findValue(accepted_shapes, input_values))
+        else if (findValue(accepted_shapes, inputs))
             id = 3; //Shape puzzle
-        else if (findValue(accepted_arrow_line, input_values))
+        else if (findValue(accepted_arrow_line, inputs))
             id = 4; //Arrow line puzzle
-        else if (findValue(accepted_arrow_grid, input_values))
+        else if (findValue(accepted_arrow_grid, inputs))
             id = 5; //Arrow grid puzzle
-        else if (findValue(accepted_decimal, input_values))
+        else if (findValue(accepted_decimal, inputs))
             id = 6; //Decimal puzzle
-        else if (findValue(accepted_character, input_values))
+        else if (findValue(accepted_character, inputs))
             id = 7; //Character puzzle
         else
             id = 8; //Puzzle not valid
@@ -64,7 +73,7 @@ public class ConverterFactory implements PuzzleFactory {
     }
 
     //Helper function to check if values are contained within accepted array
-    private boolean findValue(String accepted[], String input[])
+    private boolean findValue(String accepted[], ArrayList<String> input)
     {
         //Big O(n^2)
         //Check each element of the input array
