@@ -11,29 +11,32 @@ public class ArrowLinePuzzle implements Puzzle {
     @Override
     public boolean isSolvable() {
         //Check if the string contains an integer
-        return arrow_values[0].matches("\\d+");
+        boolean hasSolution = false;
+
+        try {
+            Integer.parseInt(arrow_values[0]);
+            hasSolution = true;
+        } catch (NumberFormatException e)
+        {
+            hasSolution = false;
+        }
+
+        return hasSolution;
     }
 
     @Override
     public void setProblem(String input) {
         //Split the input string on the "-" delimiter
-        arrow_values = input.split("-");
+        String input_values[] = input.split("-");
 
-        //Convert values
-        for (int j = 0; j < arrow_values.length; j++)
-        {
-            //Get current string
-            String arrow_value = arrow_values[j];
-            Log.d("Value", arrow_value);
-            arrow_value = arrow_value.replace(" ", "");
+        //Get the number from the first input section
+        input_values[0] = extractNumber(input_values[0]);
 
-            //Replace icon ids with their corresponding values
-            for (int i = 0; i < accepted_arrow_line.length; i++)
-                arrow_value = arrow_value.replace(accepted_arrow_line[i], accepted_arrow_line_values[i]);
+        //Convert values from id to the correct character
+        for (int i = 1; i < input_values.length; i++)
+            input_values[i] = extractArrows(input_values[i]);
 
-            //Replace the string at the given index
-            arrow_values[j] = arrow_value;
-        }
+        arrow_values = input_values;
     }
 
     @Override
@@ -42,8 +45,8 @@ public class ArrowLinePuzzle implements Puzzle {
         if (!isSolvable())
             return null;
 
+        //Extract the integer value from the input String
         int value = Integer.parseInt(arrow_values[0]);
-        Log.d("Number", String.valueOf(value));
 
         //Loop through binary values and convert to decimal
         for (int i = 1; i < arrow_values.length; i++)
@@ -60,5 +63,55 @@ public class ArrowLinePuzzle implements Puzzle {
 
         //Return the result
         return String.valueOf(value);
+    }
+
+    //Get number values from the input String
+    private String extractNumber(String input)
+    {
+        //Holds the index of the number value, if it doesn't change the value is invalid
+        int index_of_number = -1;
+
+        //Get each number from the first box
+        String sub_values[] = input.split(" ");
+        String final_number = "";
+
+        //Loop through each of the values at index 0
+        for (String number : sub_values)
+        {
+            //Loop through the array of accepted characters
+            for (int i = 0; i < accepted_arrow_line.length; i++)
+                //Find the index of the number character
+                if (accepted_arrow_line[i].equals(number))
+                    //If the value is found, get it's index
+                    index_of_number = i;
+
+            //Only run if we found a character
+            if (index_of_number != -1) {
+                //Set the id equal to its value
+                number = accepted_arrow_line_values[index_of_number];
+
+                //Append each new number to the String
+                final_number += number;
+            }
+        }
+
+        //Return the string containing the final number
+        return final_number;
+    }
+
+    //Get arrow values from the input String
+    private String extractArrows(String input)
+    {
+        //Get current string
+        String arrow_value = input;
+        //Remove spaces
+        arrow_value = arrow_value.replace(" ", "");
+
+        //Replace icon ids with their corresponding values
+        for (int j = 0; j < accepted_arrow_line.length; j++)
+            arrow_value = arrow_value.replace(accepted_arrow_line[j], accepted_arrow_line_values[j]);
+
+        //Replace the string at the given index
+        return arrow_value;
     }
 }
