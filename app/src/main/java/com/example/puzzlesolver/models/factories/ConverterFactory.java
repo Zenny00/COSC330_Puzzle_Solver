@@ -1,6 +1,9 @@
 package com.example.puzzlesolver.models.factories;
 
 import android.util.Log;
+
+import com.example.puzzlesolver.models.ArrowGridPuzzle;
+import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.BinaryPuzzle;
 import com.example.puzzlesolver.models.Puzzle;
 
@@ -20,12 +23,17 @@ public class ConverterFactory implements PuzzleFactory {
 
     @Override
     public Puzzle createPuzzle(String input) {
+        Puzzle puzzle = null;
 
         //Check the puzzle type and return the appropriate puzzle
         if (findType(input) == 0)
-            return new BinaryPuzzle();
+            puzzle = new BinaryPuzzle();
+        else if (findType(input) == 4)
+            puzzle = new ArrowLinePuzzle();
+        else if (findType(input) == 5)
+            puzzle = new ArrowGridPuzzle();
 
-        return null;
+        return puzzle;
     }
 
     @Override
@@ -33,8 +41,10 @@ public class ConverterFactory implements PuzzleFactory {
         //Split on delimiter
         String input_lines[] = input.split("-");
 
+        //ArrayList to hold characters
         ArrayList<String> inputs = new ArrayList<String>();
 
+        //Go through each of the input sections
         for (String line : input_lines)
         {
             //Split on spaces
