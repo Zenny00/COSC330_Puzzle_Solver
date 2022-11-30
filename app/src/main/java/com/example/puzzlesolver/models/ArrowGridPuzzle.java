@@ -67,6 +67,10 @@ public class ArrowGridPuzzle implements Puzzle {
                     num_col = column;
                 }
 
+        String solution = "";
+        //Add first value
+        solution += String.valueOf(grid[num_row][num_col]) + " ";
+
         Log.d("Row", String.valueOf(num_row));
         Log.d("Col", String.valueOf(num_col));
 
@@ -87,12 +91,13 @@ public class ArrowGridPuzzle implements Puzzle {
                     num_row = Math.abs((num_row - 1) % 3); //Move up on the NumPad
                 else if (sub_string.equals("d"))
                     num_row = Math.abs((num_row + 1) % 3); //Move down on the NumPad
-
             }
+
+            solution += String.valueOf(grid[num_row][num_col]) + " ";
         }
 
         //Return the result
-        return String.valueOf(grid[num_row][num_col]);
+        return solution;
     }
 
     //Get number values from the input String
@@ -134,8 +139,6 @@ public class ArrowGridPuzzle implements Puzzle {
     {
         //Get current string
         String arrow_value = input;
-        //Remove spaces
-        arrow_value = arrow_value.replace(" ", "");
 
         //Replace icon ids with their corresponding values
         for (int j = 0; j < accepted_arrow_grid.length; j++)

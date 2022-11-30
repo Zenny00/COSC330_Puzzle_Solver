@@ -13,13 +13,17 @@ public class ArrowLinePuzzle implements Puzzle {
         //Check if the string contains an integer
         boolean hasSolution = false;
 
+        int value = 0;
         try {
-            Integer.parseInt(arrow_values[0]);
+            value = Integer.parseInt(arrow_values[0]);
             hasSolution = true;
         } catch (NumberFormatException e)
         {
             hasSolution = false;
         }
+
+        if ((value < 1 || value > 9))
+            hasSolution = false;
 
         return hasSolution;
     }
@@ -48,6 +52,10 @@ public class ArrowLinePuzzle implements Puzzle {
         //Extract the integer value from the input String
         int value = Integer.parseInt(arrow_values[0]);
 
+        String solution = "";
+        //Add first value
+        solution += String.valueOf(value) + " ";
+
         //Loop through binary values and convert to decimal
         for (int i = 1; i < arrow_values.length; i++)
         {
@@ -59,10 +67,13 @@ public class ArrowLinePuzzle implements Puzzle {
                 else if (arrow_values[i].charAt(j) == '-')
                     value--;
             }
+
+            //Add each value
+            solution += String.valueOf(value) + " ";
         }
 
         //Return the result
-        return String.valueOf(value);
+        return solution;
     }
 
     //Get number values from the input String
