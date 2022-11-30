@@ -80,13 +80,14 @@ public class ArrowGridPuzzle implements Puzzle {
 
             for (String sub_string : arrow_value) {
                 if (sub_string.equals("r"))
-                    num_row = Math.abs((num_row + 1) % 2); //Move right on the NumPad
+                    num_col = Math.abs((num_col + 1) % 3); //Move left on the NumPad
                 else if (sub_string.equals("l"))
-                    num_row = Math.abs((num_row - 1) % 2); //Move left on the NumPad
+                    num_col = Math.abs((num_col - 1) % 3); //Move right on the NumPad
                 else if (sub_string.equals("u"))
-                    num_col = Math.abs((num_col + 1) % 2); //Move up on the NumPad
+                    num_row = Math.abs((num_row - 1) % 3); //Move up on the NumPad
                 else if (sub_string.equals("d"))
-                    num_col = Math.abs((num_col - 1) % 2); //Move down on the NumPad
+                    num_row = Math.abs((num_row + 1) % 3); //Move down on the NumPad
+
             }
         }
 
