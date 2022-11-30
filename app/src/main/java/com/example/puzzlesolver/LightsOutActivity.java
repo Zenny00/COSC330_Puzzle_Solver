@@ -124,6 +124,8 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
         colInput = findViewById(R.id.col_input);
         lightGrid = findViewById(R.id.lightGrid);
 
+        // sets all the lights to disabled so that user must specify dimensions
+        // this isn't a great way to do it but it's the way that works
         for (int i = 0; i < MAX_ROWS; i++) {
             TableRow tableRow = (TableRow) lightGrid.getChildAt(i);
             for (int j = 0; j < MAX_COLS; j++) {
