@@ -79,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -88,6 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -97,6 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -106,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -115,6 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -124,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -138,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -147,6 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -156,6 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -165,6 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -174,6 +184,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -183,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -197,6 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -206,6 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -215,6 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -224,6 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -233,6 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -242,6 +259,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -256,6 +274,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -265,6 +284,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -274,6 +294,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -283,6 +304,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -292,6 +314,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -301,6 +324,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -315,6 +339,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -324,6 +349,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -333,6 +359,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -342,6 +369,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -351,6 +379,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -360,6 +389,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -375,6 +405,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -384,6 +415,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -393,6 +425,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -402,6 +435,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -411,6 +445,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
@@ -420,6 +455,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
+                android:clickable="false"
                 android:contentDescription='"OFF"'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />

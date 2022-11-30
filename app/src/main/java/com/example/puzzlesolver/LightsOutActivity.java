@@ -74,9 +74,7 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
     public void gotoHome(View view) {
         finish();
     }
-    public void callSolver(View view) {
-        solveProblem();
-    }
+    public void callSolver(View view) {solveProblem();}
     public void toggleBtn(View view) {
         if (((ImageButton) view).getContentDescription().toString().contentEquals("ON")) {
             ((ImageButton) view).setContentDescription("OFF");
@@ -125,5 +123,16 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
         rowInput = findViewById(R.id.row_input);
         colInput = findViewById(R.id.col_input);
         lightGrid = findViewById(R.id.lightGrid);
+
+        for (int i = 0; i < MAX_ROWS; i++) {
+            TableRow tableRow = (TableRow) lightGrid.getChildAt(i);
+            for (int j = 0; j < MAX_COLS; j++) {
+                ImageButton btn = (ImageButton) tableRow.getChildAt(j);
+                btn.setClickable(false);
+                btn.setContentDescription("DISABLED");
+                btn.setImageResource(R.drawable.lights_disabled);
+
+            }
+        }
     }
 }
