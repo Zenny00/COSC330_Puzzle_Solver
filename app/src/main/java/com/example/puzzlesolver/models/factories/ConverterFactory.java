@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ConverterFactory implements PuzzleFactory {
 
     //Constants to hold the accepted icons for each puzzle
-    private final String accepted_binary[] = {"0", "5", "6"}; //ID 0
+    private final String accepted_binary[] = {"700", "701"}; //ID 0
     private final String accepted_morse[] = {"0", "18", "19"}; //ID 1
     private final String accepted_roman[] = {"0", "20", "21", "22", "23", "24", "25", "26", "27", "28"}; //ID 2
     private final String accepted_shapes[] = {"0", "15", "16", "17"}; //ID 3

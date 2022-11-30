@@ -5,18 +5,25 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class BinaryPuzzle implements Puzzle {
+    //Split Strings
     String binary_values[];
+
+    //String of accepted characters
+    private final String accepted_binary[] = {"700", "701"};
+    private final String accepted_binary_value[] = {"0", "1"};
 
     @Override
     public boolean isSolvable() {
-        boolean isSolvable = false;
+        boolean isSolvable = true;
 
+        /*
         //Check if there is at least one non empty String
         for (String binary : binary_values)
         {
             if (!binary.equals(""))
                 isSolvable = true;
         }
+         */
 
         return isSolvable;
     }
@@ -32,8 +39,8 @@ public class BinaryPuzzle implements Puzzle {
             //Get current string
             String binary = binary_values[j];
             //Replace icon ids with their corresponding values
-            binary = binary.replace('5', '0');
-            binary = binary.replace('6', '1');
+            binary = binary.replace("700", "0");
+            binary = binary.replace("701", "1");
             binary = binary.replace(" ", "");
 
             //Replace the string at the given index
