@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -155,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -195,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -220,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -230,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -250,7 +250,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -260,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -275,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -285,7 +285,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -295,7 +295,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -305,7 +305,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -315,7 +315,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -325,7 +325,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -340,7 +340,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -350,7 +350,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -360,7 +360,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -370,7 +370,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -380,7 +380,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -390,7 +390,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -406,7 +406,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -416,7 +416,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -426,7 +426,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -436,7 +436,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -446,7 +446,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
 
@@ -456,7 +456,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:clickable="false"
-                android:contentDescription='"OFF"'
+                android:contentDescription='@string/btn_state_off'
                 android:onClick="toggleBtn"
                 app:srcCompat="@drawable/lights_off" />
         </TableRow>
@@ -507,6 +507,7 @@
         android:paddingEnd="5dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </LinearLayout>

@@ -15,4 +15,8 @@
     <string name="submit_btn">submit</string>
     <string name="exit_btn">return</string>
     <string name="set_btn">set</string>
+    <string name="index_err_msg">Please check your grid dimensions!</string>
+    <string name="btn_state_on">ON</string>
+    <string name="btn_state_off">OFF</string>
+    <string name="btn_state_disabled">DISABLED</string>
 </resources>

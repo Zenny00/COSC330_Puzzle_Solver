@@ -51,7 +51,7 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
                 TableRow row = (TableRow) lightGrid.getChildAt(i);
                 for (int j = 0; j < numCols; j++) {
                     ImageButton btn = (ImageButton) row.getChildAt(j);
-                    if (btn.getContentDescription().equals("ON"))
+                    if (btn.getContentDescription().equals(getString(R.string.btn_state_on)))
                         puzzle += "1";
                     else
                         puzzle += "0";
@@ -63,7 +63,7 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
     @Override
     public void outputError() {
         // TODO: Make this better with animations
-        outputTV.setText(R.string.app_name);
+        outputTV.setText(R.string.index_err_msg);
     }
     @Override
     public void outputSolution() {
@@ -76,11 +76,11 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
     }
     public void callSolver(View view) {solveProblem();}
     public void toggleBtn(View view) {
-        if (((ImageButton) view).getContentDescription().toString().contentEquals("ON")) {
-            ((ImageButton) view).setContentDescription("OFF");
+        if (((ImageButton) view).getContentDescription().toString().contentEquals(getString(R.string.btn_state_on))) {
+            ((ImageButton) view).setContentDescription(getString(R.string.btn_state_off));
             ((ImageButton) view).setImageResource(R.drawable.lights_off);
         } else {
-            ((ImageButton) view).setContentDescription("ON");
+            ((ImageButton) view).setContentDescription(getString(R.string.btn_state_on));
             ((ImageButton) view).setImageResource(R.drawable.lights_on);
         }
     }
@@ -104,11 +104,11 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
                 ImageButton btn = (ImageButton) tableRow.getChildAt(j);
                 if (i >= numRows || j >= numCols) {
                     btn.setClickable(false);
-                    btn.setContentDescription("DISABLED");
+                    btn.setContentDescription(getString(R.string.btn_state_disabled));
                     btn.setImageResource(R.drawable.lights_disabled);
-                } else if (btn.getContentDescription().equals("DISABLED")) {
+                } else if (btn.getContentDescription().equals(getString(R.string.btn_state_disabled))) {
                     btn.setClickable(true);
-                    btn.setContentDescription("OFF");
+                    btn.setContentDescription(getString(R.string.btn_state_off));
                     btn.setImageResource(R.drawable.lights_off);
                 }
             }
@@ -129,7 +129,7 @@ public class LightsOutActivity extends PuzzleSolverTemplate{
             for (int j = 0; j < MAX_COLS; j++) {
                 ImageButton btn = (ImageButton) tableRow.getChildAt(j);
                 btn.setClickable(false);
-                btn.setContentDescription("DISABLED");
+                btn.setContentDescription(getString(R.string.btn_state_disabled));
                 btn.setImageResource(R.drawable.lights_disabled);
 
             }
