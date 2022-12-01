@@ -1,5 +1,13 @@
-package com.example.puzzlesolver.models;
+/*  Implementation Logic is from the Archive of Interesting Code
+    Author: Keith Schwarz (htiel@cs.standford.edu)
 
+    This program uses linear algebra and a matrix representation of a
+    lights out puzzle in order to create a solution that will leave all
+    the lights on. 
+    
+    Last Updated: 11/30/2022 by Justin Conklin */
+
+package com.example.puzzlesolver.models;
 
 import java.util.Arrays;
 
@@ -39,7 +47,6 @@ public class LightsOutPuzzle implements Puzzle{
             return "No solutions found for light configuration";
         else
             return makeCleanString(solutionVector);
-            //return Arrays.toString(solutionVector);
     }
 
     // HELPER FUNCTIONS
@@ -116,6 +123,12 @@ public class LightsOutPuzzle implements Puzzle{
             r2[i] = (r2[i] != r1[i]);
     }
 
+    /*  A normal lights out puzzle seeks to turn off all the lights
+        The puzzle we want to solve is one where we turn on all the
+        lights. To do this we invert the puzzle because the solution
+        that turns off all the lights of the inverse puzzle would be
+        the same solution that turns on all the lights of the original
+        puzzle. */
     public void invertPuzzle(boolean[] puzzle) {
         for (int i = 0; i < M*N; i++)
             puzzle[i] = !puzzle[i];
