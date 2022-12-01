@@ -91,13 +91,6 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
                 : IconDialog.newInstance(new IconDialogSettings.Builder().build());
 
         registerListeners();
-        /*
-        Button btn = findViewById(R.id.open_btn);
-        btn.setOnClickListener(v -> {
-            // Open icon dialog
-            iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
-        });
-         */
     }
 
     //Setup "on click" listeners for the image views

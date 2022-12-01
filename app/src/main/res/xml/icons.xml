@@ -18,14 +18,14 @@
     <!-- ROMAN NUMERALS -->
     <category id="3" name="Roman">
         <icon id="400" tags="roman, numerals, i, 1, one" src="@drawable/roman_1" />
-        <icon id="401" tags="roman, numerals, i, 1, one" src="@drawable/roman_2" />
-        <icon id="402" tags="roman, numerals, i, 1, one" src="@drawable/roman_3" />
-        <icon id="403" tags="roman, numerals, i, 1, one" src="@drawable/roman_4" />
-        <icon id="404" tags="roman, numerals, i, 1, one" src="@drawable/roman_5" />
-        <icon id="405" tags="roman, numerals, i, 1, one" src="@drawable/roman_6" />
-        <icon id="406" tags="roman, numerals, i, 1, one" src="@drawable/roman_7" />
-        <icon id="407" tags="roman, numerals, i, 1, one" src="@drawable/roman_8" />
-        <icon id="408" tags="roman, numerals, i, 1, one" src="@drawable/roman_9" />
+        <icon id="401" tags="roman, numerals, ii, 2, two" src="@drawable/roman_2" />
+        <icon id="402" tags="roman, numerals, iii, 3, three" src="@drawable/roman_3" />
+        <icon id="403" tags="roman, numerals, iv, 4, four" src="@drawable/roman_4" />
+        <icon id="404" tags="roman, numerals, v, 5, five" src="@drawable/roman_5" />
+        <icon id="405" tags="roman, numerals, vi, 6, six" src="@drawable/roman_6" />
+        <icon id="406" tags="roman, numerals, vii, 7, seven" src="@drawable/roman_7" />
+        <icon id="407" tags="roman, numerals, viii, 8, eight" src="@drawable/roman_8" />
+        <icon id="408" tags="roman, numerals, ix, 9, nine" src="@drawable/roman_9" />
     </category>
 
     <!-- SHAPE ICONS -->
