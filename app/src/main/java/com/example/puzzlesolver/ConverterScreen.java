@@ -1,5 +1,6 @@
 package com.example.puzzlesolver;
 
+import android.animation.Animator;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
@@ -32,6 +33,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     //Private data members to hold view components
     private TextView puzzle_output;
+    private ImageView lock_icon;
 
     //Holds references to the four puzzle inputs
     private AppCompatImageView puzzle_input_1;
@@ -63,6 +65,9 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
         //Initialize new puzzle factory for converters
         puzzleFactory = new ConverterFactory();
+
+        //Get reference to the lock icon
+        lock_icon = (ImageView) findViewById(R.id.lock_icon);
 
         //Get solve button from view
         solve_btn = (Button) findViewById(R.id.solve_puzzle);
@@ -179,10 +184,43 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
                 if (puzzle.findSolution() == null)
                     puzzle_output.setText("Solution: " + "None Found!");
                 else
+                {
                     puzzle_output.setText("Solution: " + puzzle.findSolution());
+                    rotate_animation(lock_icon);
+                }
+
             }
         }
     };
+
+    //Rotate the lock icon around the Y-axis with a duration of 1 second
+    private void rotate_animation(ImageView img)
+    {
+        img.animate();
+        img.animate().setDuration(500);
+        img.animate().rotationYBy(360f);
+
+        //Animation Listener
+        img.animate().setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) { }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                //When the animation ends, change the icon
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    img.setImageDrawable(getDrawable(R.drawable.lock_unlock_icon));
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) { }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {}
+        }).start();
+    }
+
 
     @Override
     public void onIconDialogCancelled() {}

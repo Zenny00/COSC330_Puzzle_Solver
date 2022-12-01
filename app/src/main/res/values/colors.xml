@@ -14,5 +14,5 @@
 
     <!-- PUZZLE COLOR VALUES -->
     <color name="button_red">#82181D</color>
-    <color name="button_text">#F3D6CD</color>
+    <color name="button_text">#fEE77A</color>
 </resources>
