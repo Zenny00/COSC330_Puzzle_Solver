@@ -5,6 +5,8 @@ import android.util.Log;
 import com.example.puzzlesolver.models.ArrowGridPuzzle;
 import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.BinaryPuzzle;
+import com.example.puzzlesolver.models.CharacterPuzzle;
+import com.example.puzzlesolver.models.DecimalPuzzle;
 import com.example.puzzlesolver.models.LinePuzzle;
 import com.example.puzzlesolver.models.MorsePuzzle;
 import com.example.puzzlesolver.models.Puzzle;
@@ -22,8 +24,8 @@ public class ConverterFactory implements PuzzleFactory {
     private final String accepted_shapes[] = {"200", "201", "202", "203", "204", "205", "206", "207", "208"}; //ID 3
     private final String accepted_arrow_line[] = {"0", "1", "2", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 4
     private final String accepted_arrow_grid[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 5
-    private final String accepted_decimal[] = {"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 6
-    private final String accepted_character[] = {"0", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54"}; //ID 7
+    private final String accepted_decimal[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315", "316", "317", "318", "319", "320", "321", "322", "323", "324", "325"}; //ID 6
+    private final String accepted_character[] = {"500", "501", "502", "503", "504", "505", "506", "507", "508"};//ID 7
     private final String accepted_line[] = {"800", "801", "802", "803", "804", "805", "806", "807", "808"}; //ID 8
 
     @Override
@@ -43,6 +45,10 @@ public class ConverterFactory implements PuzzleFactory {
             puzzle = new ArrowLinePuzzle();
         else if (findType(input) == 5)
             puzzle = new ArrowGridPuzzle();
+        else if (findType(input) == 6)
+            puzzle = new DecimalPuzzle();
+        else if (findType(input) == 7)
+            puzzle = new CharacterPuzzle();
         else if (findType(input) == 8)
             puzzle = new LinePuzzle();
 
