@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -10,79 +10,94 @@
 
     <!-- MENU TITLE TEXT -->
     <!-- PLACED AT TOP OF SCREEN WITH MARGIN OF 20dp -->
+
+    <!-- SUBTEXT -->
+
+    <!-- RELATIVE LAYOUT -->
+    <!-- HOLDS MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
+
+
+    <!-- CONVERTERS -->
+
+    <!-- WORD ACTIVITY -->
+
+    <!-- LIGHTS OUT ACTIVITY -->
+
+    <!-- SLIDING PUZZLE ACTIVITY -->
     <TextView
         android:id="@+id/menuTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
         android:text="@string/menu_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
         android:textSize="55dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- SUBTEXT -->
     <TextView
-        android:layout_below="@id/menuTitle"
         android:id="@+id/subtitle"
-        android:text="@string/subtitle"
-        android:textColor="@color/white"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuTitle" />
 
-    <!-- RELATIVE LAYOUT -->
-    <!-- HOLDS MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
-    <RelativeLayout
-        android:id="@+id/menuButtons"
-        android:layout_below="@id/subtitle"
-        android:layout_marginTop="@dimen/title_margin"
-        android:layout_centerHorizontal="true"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content" >
+    <Button
+        android:id="@+id/converter_btn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="launchConverterActivity"
+        android:text="@string/convert_text"
+        app:layout_constraintBottom_toTopOf="@+id/word_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- CONVERTERS -->
-        <Button
-            android:id="@+id/converter_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_centerHorizontal="true"
-            android:onClick="launchConverterActivity"
-            android:text="@string/convert_text" />
+    <Button
+        android:id="@+id/word_btn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="launchWordActivity"
+        android:text="@string/word_text"
+        app:layout_constraintBottom_toTopOf="@+id/light_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- WORD ACTIVITY -->
-        <Button
-            android:id="@+id/word_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@+id/converter_btn"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:onClick="launchWordActivity"
-            android:text="@string/word_text" />
+    <Button
+        android:id="@+id/light_btn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="launchLightsActivity"
+        android:text="@string/light_text"
+        app:layout_constraintBottom_toTopOf="@+id/slider_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- LIGHTS OUT ACTIVITY -->
-        <Button
-            android:id="@+id/light_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@+id/word_btn"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:onClick="launchLightsActivity"
-            android:text="@string/light_text" />
+    <Button
+        android:id="@+id/slider_btn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="launchSliderActivity"
+        android:text="@string/slider_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- SLIDING PUZZLE ACTIVITY -->
-        <Button
-            android:id="@+id/slider_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@+id/light_btn"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:onClick="launchSliderActivity"
-            android:text="@string/slider_text" />
-    </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
