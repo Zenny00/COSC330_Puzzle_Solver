@@ -5,9 +5,11 @@ import android.util.Log;
 import com.example.puzzlesolver.models.ArrowGridPuzzle;
 import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.BinaryPuzzle;
+import com.example.puzzlesolver.models.LinePuzzle;
 import com.example.puzzlesolver.models.MorsePuzzle;
 import com.example.puzzlesolver.models.Puzzle;
 import com.example.puzzlesolver.models.RomanPuzzle;
+import com.example.puzzlesolver.models.ShapePuzzle;
 
 import java.util.ArrayList;
 
@@ -17,11 +19,12 @@ public class ConverterFactory implements PuzzleFactory {
     private final String accepted_binary[] = {"700", "701"}; //ID 0
     private final String accepted_morse[] = {"100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134"}; //ID 1
     private final String accepted_roman[] = {"400", "401", "402", "403", "404", "405", "406", "407", "408"}; //ID 2
-    private final String accepted_shapes[] = {"0", "15", "16", "17"}; //ID 3
+    private final String accepted_shapes[] = {"200", "201", "202", "203", "204", "205", "206", "207", "208"}; //ID 3
     private final String accepted_arrow_line[] = {"0", "1", "2", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 4
     private final String accepted_arrow_grid[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 5
     private final String accepted_decimal[] = {"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 6
     private final String accepted_character[] = {"0", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54"}; //ID 7
+    private final String accepted_line[] = {"800", "801", "802", "803", "804", "805", "806", "807", "808"}; //ID 8
 
     @Override
     public Puzzle createPuzzle(String input) {
@@ -34,10 +37,14 @@ public class ConverterFactory implements PuzzleFactory {
             puzzle = new MorsePuzzle();
         else if (findType(input) == 2)
             puzzle = new RomanPuzzle();
+        else if (findType(input) == 3)
+            puzzle = new ShapePuzzle();
         else if (findType(input) == 4)
             puzzle = new ArrowLinePuzzle();
         else if (findType(input) == 5)
             puzzle = new ArrowGridPuzzle();
+        else if (findType(input) == 8)
+            puzzle = new LinePuzzle();
 
         return puzzle;
     }
@@ -79,8 +86,10 @@ public class ConverterFactory implements PuzzleFactory {
             id = 6; //Decimal puzzle
         else if (findValue(accepted_character, inputs))
             id = 7; //Character puzzle
+        else if (findValue(accepted_line, inputs))
+            id = 8; //Character puzzle
         else
-            id = 8; //Puzzle not valid
+            id = 9; //Puzzle not valid
 
         Log.d("Puzzle ID", String.valueOf(id));
 
