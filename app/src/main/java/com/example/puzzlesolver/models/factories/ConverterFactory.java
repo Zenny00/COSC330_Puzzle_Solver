@@ -88,6 +88,10 @@ public class ConverterFactory implements PuzzleFactory {
     //Helper function to check if values are contained within accepted array
     private boolean findValue(String accepted[], ArrayList<String> input)
     {
+        //Check if the array is empty
+        if (input.isEmpty())
+            return false;
+
         //Big O(n^2)
         //Check each element of the input array
         for (String curr : input)
@@ -101,7 +105,7 @@ public class ConverterFactory implements PuzzleFactory {
             Log.d("Boolean", String.valueOf(notFound));
 
             //If the value was not found, return false
-            if (notFound)
+            if (notFound || curr.equals(""))
                 return  false;
         }
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -172,8 +173,10 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
             Puzzle puzzle = puzzleFactory.createPuzzle(input_string);
 
             //Check if a puzzle matching the input was found, if not print an error message
-            if (puzzle == null)
+            if (puzzle == null) {
                 puzzle_output.setText("Solution: " + "Invalid Puzzle!");
+                shake_animation(lock_icon);
+            }
             else
             {
                 //If puzzle was found setup the problem and find a solution
@@ -181,8 +184,10 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
                 //Once the puzzle is setup does it have a solution?
                 //If not print an error message
-                if (puzzle.findSolution() == null)
+                if (puzzle.findSolution() == null) {
                     puzzle_output.setText("Solution: " + "None Found!");
+                    shake_animation(lock_icon);
+                }
                 else
                 {
                     puzzle_output.setText("Solution: " + puzzle.findSolution());
@@ -192,6 +197,16 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
             }
         }
     };
+
+    //Shake the lock icon around for 1 second
+    private void shake_animation(ImageView img) {
+        TranslateAnimation anim = new TranslateAnimation(-25.0f, 25.0f, 0.0f, 0.0f);
+        anim.setDuration(100);
+        anim.setRepeatCount(3);
+        anim.setRepeatMode(2);
+
+        img.startAnimation(anim);
+    }
 
     //Rotate the lock icon around the Y-axis with a duration of 1 second
     private void rotate_animation(ImageView img)
