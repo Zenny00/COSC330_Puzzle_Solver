@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="@string/menu_title"
-        android:textColor="@color/white"
+        android:textColor="@color/button_text"
         android:textSize="55dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -26,7 +26,7 @@
         android:layout_below="@id/menuTitle"
         android:id="@+id/subtitle"
         android:text="@string/subtitle"
-        android:textColor="@color/white"
+        android:textColor="@color/button_text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -47,6 +47,8 @@
             android:id="@+id/converter_btn"
             android:layout_centerHorizontal="true"
             android:text="@string/convert_text"
+            android:textColor="@color/button_text"
+            android:backgroundTint="@color/button_red"
             android:layout_width="match_parent"
             android:layout_height="75dp" />
 
@@ -55,6 +57,8 @@
             android:layout_below="@+id/converter_btn"
             android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/word_btn"
+            android:textColor="@color/button_text"
+            android:backgroundTint="@color/button_red"
             android:layout_centerHorizontal="true"
             android:text="@string/word_text"
             android:layout_width="match_parent"
@@ -65,20 +69,15 @@
             android:layout_below="@+id/word_btn"
             android:layout_marginTop="@dimen/btn_margin"
             android:id="@+id/light_btn"
+            android:textColor="@color/button_text"
+            android:backgroundTint="@color/button_red"
             android:layout_centerHorizontal="true"
             android:text="@string/light_text"
             android:layout_width="match_parent"
             android:layout_height="75dp" />
 
         <!-- SLIDING PUZZLE ACTIVITY -->
-        <Button
-            android:layout_below="@+id/light_btn"
-            android:layout_marginTop="@dimen/btn_margin"
-            android:id="@+id/slider_btn"
-            android:layout_centerHorizontal="true"
-            android:text="@string/slider_text"
-            android:layout_width="match_parent"
-            android:layout_height="75dp" />
+        <!-- THIS IS NO LONGER GOING TO BE IMPLEMENTED -->
     </RelativeLayout>
 
 </RelativeLayout>

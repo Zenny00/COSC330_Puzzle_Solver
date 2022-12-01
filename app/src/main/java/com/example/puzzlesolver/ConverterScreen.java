@@ -191,6 +191,28 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         }
     };
 
+    public void clearPuzzle(View view)
+    {
+        //Clear the image views
+        puzzle_input_1.setImageResource(0);
+        puzzle_input_2.setImageResource(0);
+        puzzle_input_3.setImageResource(0);
+        puzzle_input_4.setImageResource(0);
+
+        //Clear input Strings
+        input_string_1 = "";
+        input_string_2 = "";
+        input_string_3 = "";
+        input_string_4 = "";
+
+        //Reset the lock icon
+        if (lock_icon.getDrawable().getConstantState().equals(lock_icon.getContext().getDrawable(R.drawable.lock_unlock_icon).getConstantState()))
+            clear_animation(lock_icon);
+
+        //Reset solution
+        puzzle_output.setText("Solution:");
+    }
+
     //Shake the lock icon around for 1 second
     private void shake_animation(ImageView img) {
         TranslateAnimation anim = new TranslateAnimation(-25.0f, 25.0f, 0.0f, 0.0f);
@@ -201,7 +223,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         img.startAnimation(anim);
     }
 
-    //Rotate the lock icon around the Y-axis with a duration of 1 second
+    //Rotate the lock icon around the Y-axis with a duration of .5 seconds
     private void rotate_animation(ImageView img)
     {
         img.animate();
@@ -218,6 +240,34 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
                 //When the animation ends, change the icon
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     img.setImageDrawable(getDrawable(R.drawable.lock_unlock_icon));
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) { }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {}
+        }).start();
+    }
+
+    //Rotate the lock icon around the Y-axis with a duration of .5 seconds
+    private void clear_animation(ImageView img)
+    {
+        img.animate();
+        img.animate().setDuration(500);
+        img.animate().rotationYBy(360f);
+
+        //Animation Listener
+        img.animate().setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) { }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                //When the animation ends, change the icon
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    img.setImageDrawable(getDrawable(R.drawable.lock_img));
                 }
             }
 
