@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.puzzlesolver.models.ArrowGridPuzzle;
 import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.BinaryPuzzle;
+import com.example.puzzlesolver.models.MorsePuzzle;
 import com.example.puzzlesolver.models.Puzzle;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class ConverterFactory implements PuzzleFactory {
 
     //Constants to hold the accepted icons for each puzzle
     private final String accepted_binary[] = {"700", "701"}; //ID 0
-    private final String accepted_morse[] = {"0", "18", "19"}; //ID 1
+    private final String accepted_morse[] = {"100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134"}; //ID 1
     private final String accepted_roman[] = {"0", "20", "21", "22", "23", "24", "25", "26", "27", "28"}; //ID 2
     private final String accepted_shapes[] = {"0", "15", "16", "17"}; //ID 3
     private final String accepted_arrow_line[] = {"0", "1", "2", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 4
@@ -28,6 +29,8 @@ public class ConverterFactory implements PuzzleFactory {
         //Check the puzzle type and return the appropriate puzzle
         if (findType(input) == 0)
             puzzle = new BinaryPuzzle();
+        else if (findType(input) == 1)
+            puzzle = new MorsePuzzle();
         else if (findType(input) == 4)
             puzzle = new ArrowLinePuzzle();
         else if (findType(input) == 5)
