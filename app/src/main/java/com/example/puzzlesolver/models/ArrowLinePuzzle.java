@@ -3,29 +3,35 @@ package com.example.puzzlesolver.models;
 import android.util.Log;
 
 public class ArrowLinePuzzle implements Puzzle {
+    String accepted_arrow_line[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "5", "6", "7", "8"}; //ID 4
+    String accepted_arrow_line_values[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "l", "r", "ll", "rr", "lll", "rrr"}; //Icon values
     String arrow_values[];
-
-    private final String accepted_arrow_line[] = {"0", "1", "2", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"};
-    private final String accepted_arrow_line_values[] = {" ", "-", "+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
     @Override
     public boolean isSolvable() {
-        //Check if the string contains an integer
-        boolean hasSolution = false;
+        //Initialize the starting value to be out of range
+        int starting_value = -1;
 
-        int value = 0;
-        try {
-            value = Integer.parseInt(arrow_values[0]);
-            hasSolution = true;
+        //Check if the first value contains a digit
+        try
+        {
+            starting_value = Integer.parseInt(arrow_values[0]);
         } catch (NumberFormatException e)
         {
-            hasSolution = false;
+            return false;
         }
 
-        if ((value < 1 || value > 9))
-            hasSolution = false;
+        //If the character is a digit make sure it is within the allowed ranges
+        if (starting_value < 1 || starting_value > 9)
+            return false;
 
-        return hasSolution;
+        //If any of the spaces are empty the puzzle has no solution
+        for (String value : arrow_values)
+            if (value.isEmpty())
+                return false;
+
+        //If each input String had a value there is a possible solution
+        return true;
     }
 
     @Override
@@ -33,96 +39,110 @@ public class ArrowLinePuzzle implements Puzzle {
         //Split the input string on the "-" delimiter
         String input_values[] = input.split("-");
 
-        //Get the number from the first input section
-        input_values[0] = extractNumber(input_values[0]);
-
-        //Convert values from id to the correct character
-        for (int i = 1; i < input_values.length; i++)
-            input_values[i] = extractArrows(input_values[i]);
+        //Loop through the entire list of characters, not special values needed
+        //Convert values from ids to the correct character
+        for (int i = 0; i < input_values.length; i++) {
+            input_values[i] = extractArrow(input_values[i]);
+            Log.d("Current value", input_values[i]);
+        }
 
         arrow_values = input_values;
     }
 
     @Override
     public String findSolution() {
-        //Check if the puzzle has a solution
+        //If the puzzle has no solution return nothing
         if (!isSolvable())
             return null;
 
-        //Extract the integer value from the input String
+        //Append each value to and output String
+        String solution = "";
+
+        //Get the starting value
         int value = Integer.parseInt(arrow_values[0]);
 
-        String solution = "";
-        //Add first value
+        //Index of the initial value
+        int index = -1;
+
+        //Line of the numbers that arrows will be used to seek through
+        int number_line[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        //Loop through the number line till we find the starting value
+        //If the value is found, then save the index
+        for (int i = 0; i < number_line.length; i++)
+            if (number_line[i] == value)
+                index = i;
+
+        //Append the first value to the solution string
         solution += String.valueOf(value) + " ";
 
-        //Loop through binary values and convert to decimal
+        //Loop through each arrow value starting at index 1 (second value input)
         for (int i = 1; i < arrow_values.length; i++)
         {
-            //Iterate through each of the other boxes
-            //Add each time there is an up arrow, subtract each time there is a down arrow
-            for (int j = 0; j < arrow_values[i].length(); j++) {
-                if (arrow_values[i].charAt(j) == '+')
-                    value++;
-                else if (arrow_values[i].charAt(j) == '-')
-                    value--;
+            //Get the current string (arrow value)
+            String current = arrow_values[i];
+
+            Log.d("Before", String.valueOf(index));
+
+            if (current.equals("l")) {
+                index = (index - 1); //Move left across the number line by one space
+                if (index < 0) //If the number is out of bounds move to the other side
+                    index = number_line.length - Math.abs(index);
+            }
+            else if (current.equals("r")) {
+                index = (index + 1); //Move right across the number line by one space
+                if (index > 9) //If the number is out of bounds move to the other side
+                    index = (index - number_line.length);
+            }
+            else if (current.equals("ll")) {
+                index = (index - 2); //Move left across the number line by two spaces
+                if (index < 0) //If the number is out of bounds move to the other side
+                    index = number_line.length - Math.abs(index);
+            }
+            else if (current.equals("rr")) {
+                index = (index + 2); //Move right across the number line by two spaces
+                if (index > 9) //If the number is out of bounds move to the other side
+                    index = (index - number_line.length);
+            }
+            else if (current.equals("lll")) {
+                index = (index - 3); //Move left across the number line by three spaces
+                if (index < 0) //If the number is out of bounds move to the other side
+                    index = number_line.length - Math.abs(index);
+            }
+            else if (current.equals("rrr")) {
+                index = (index + 3); //Move right across the number line by three spaces
+                if (index > 9) //If the number is out of bounds move to the other side
+                    index = (index - number_line.length);
             }
 
-            //Add each value
-            solution += String.valueOf(value) + " ";
+            Log.d("After", String.valueOf(index));
+
+            //Append the current value to the solution string
+            solution += String.valueOf(number_line[index]) + " ";
         }
 
-        //Return the result
+        //Return the solution
         return solution;
     }
 
-    //Get number values from the input String
-    private String extractNumber(String input)
-    {
-        //Holds the index of the number value, if it doesn't change the value is invalid
-        int index_of_number = -1;
-
-        //Get each number from the first box
-        String sub_values[] = input.split(" ");
-        String final_number = "";
-
-        //Loop through each of the values at index 0
-        for (String number : sub_values)
-        {
-            //Loop through the array of accepted characters
-            for (int i = 0; i < accepted_arrow_line.length; i++)
-                //Find the index of the number character
-                if (accepted_arrow_line[i].equals(number))
-                    //If the value is found, get it's index
-                    index_of_number = i;
-
-            //Only run if we found a character
-            if (index_of_number != -1) {
-                //Set the id equal to its value
-                number = accepted_arrow_line_values[index_of_number];
-
-                //Append each new number to the String
-                final_number += number;
-            }
-        }
-
-        //Return the string containing the final number
-        return final_number;
-    }
-
-    //Get arrow values from the input String
-    private String extractArrows(String input)
+    //Get roman numeral values from the input String
+    private String extractArrow(String input)
     {
         //Get current string
         String arrow_value = input;
         //Remove spaces
         arrow_value = arrow_value.replace(" ", "");
 
-        //Replace icon ids with their corresponding values
-        for (int j = 0; j < accepted_arrow_line.length; j++)
-            arrow_value = arrow_value.replace(accepted_arrow_line[j], accepted_arrow_line_values[j]);
+        //Loop through each roman numeral and get its decimal value
+        for (int i = 0; i < accepted_arrow_line.length; i++) {
+            //Replace numeral with the proper value
+            if (arrow_value.equals(accepted_arrow_line[i])) {
+                arrow_value = accepted_arrow_line_values[i];
+                break; //Break out of the loop to prevent the value from being converted again
+            }
+        }
 
-        //Replace the string at the given index
+        //Return the extracted String
         return arrow_value;
     }
 }

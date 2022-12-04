@@ -3,9 +3,7 @@ package com.example.puzzlesolver.models.factories;
 import android.util.Log;
 
 import com.example.puzzlesolver.models.ArrowGridPuzzle;
-import com.example.puzzlesolver.models.ArrowGridPuzzle2;
 import com.example.puzzlesolver.models.ArrowLinePuzzle;
-import com.example.puzzlesolver.models.ArrowLinePuzzle2;
 import com.example.puzzlesolver.models.BinaryPuzzle;
 import com.example.puzzlesolver.models.CharacterPuzzle;
 import com.example.puzzlesolver.models.DecimalPuzzle;
@@ -44,9 +42,9 @@ public class ConverterFactory implements PuzzleFactory {
         else if (findType(input) == 3)
             puzzle = new ShapePuzzle();
         else if (findType(input) == 4)
-            puzzle = new ArrowLinePuzzle2();
+            puzzle = new ArrowLinePuzzle();
         else if (findType(input) == 5)
-            puzzle = new ArrowGridPuzzle2();
+            puzzle = new ArrowGridPuzzle();
         else if (findType(input) == 6)
             puzzle = new DecimalPuzzle();
         else if (findType(input) == 7)

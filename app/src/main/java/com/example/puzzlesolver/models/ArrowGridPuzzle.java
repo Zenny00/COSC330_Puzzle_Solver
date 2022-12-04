@@ -3,25 +3,35 @@ package com.example.puzzlesolver.models;
 import android.util.Log;
 
 public class ArrowGridPuzzle implements Puzzle {
+    String accepted_arrow_line[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "3", "4"}; //ID 5
+    String accepted_arrow_line_values[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "l", "r", "u", "d"}; //Icon values
     String arrow_values[];
-
-    private final String accepted_arrow_grid[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 5
-    private final String accepted_arrow_gird_values[] = {" ", "l", "r", "u", "d", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
     @Override
     public boolean isSolvable() {
-        //Check if the string contains an integer
-        boolean hasSolution = false;
+        //Initialize the starting value to be out of range
+        int starting_value = -1;
 
-        try {
-            Integer.parseInt(arrow_values[0]);
-            hasSolution = true;
+        //Check if the first value contains a digit
+        try
+        {
+            starting_value = Integer.parseInt(arrow_values[0]);
         } catch (NumberFormatException e)
         {
-            hasSolution = false;
+            return false;
         }
 
-        return hasSolution;
+        //If the character is a digit make sure it is within the allowed ranges
+        if (starting_value < 1 || starting_value > 9)
+            return false;
+
+        //If any of the spaces are empty the puzzle has no solution
+        for (String value : arrow_values)
+            if (value.isEmpty())
+                return false;
+
+        //If each input String had a value there is a possible solution
+        return true;
     }
 
     @Override
@@ -29,122 +39,114 @@ public class ArrowGridPuzzle implements Puzzle {
         //Split the input string on the "-" delimiter
         String input_values[] = input.split("-");
 
-        //Get the number from the first input section
-        input_values[0] = extractNumber(input_values[0]);
-
-        //Convert values from id to the correct character
-        for (int i = 1; i < input_values.length; i++)
-            input_values[i] = extractArrows(input_values[i]);
+        //Loop through the entire list of characters, not special values needed
+        //Convert values from ids to the correct character
+        for (int i = 0; i < input_values.length; i++) {
+            input_values[i] = extractArrow(input_values[i]);
+            Log.d("Current value", input_values[i]);
+        }
 
         arrow_values = input_values;
     }
 
     @Override
     public String findSolution() {
-        //Check if the puzzle has a solution
+        //If the puzzle has no solution return nothing
         if (!isSolvable())
             return null;
 
+        //Append each value to and output String
+        String solution = "";
+
+        //Holds the initial value
         int value = Integer.parseInt(arrow_values[0]);
 
-        int num_row = 0;
-        int num_col = 0;
+        //Holds the indexes for the current value
+        int num_row = -1;
+        int num_col = -1;
 
         //2D grid to hold the NumPad
         int grid[][] = {{7, 8, 9},
                         {4, 5, 6},
                         {1, 2, 3}};
 
-        Log.d("Number", String.valueOf(value));
-        Log.d("Arr Length", String.valueOf(grid.length));
-
+        //Loop through the number line till we find the starting value
+        //If the value is found, then save the index
         //Loop through the NumPad
-        for (int row = 0; row < grid.length - 1; row++)
-            for (int column = 0; column < grid[column].length - 1; column++)
+        for (int row = 0; row < grid.length; row++)
+            for (int column = 0; column < grid[row].length; column++)
                 //Get the coordinates of the value if it exists within the 2D array
                 if (grid[row][column] == value){
                     num_row = row;
                     num_col = column;
+                    Log.d("Value found", String.valueOf(value));
                 }
 
-        String solution = "";
-        //Add first value
-        solution += String.valueOf(grid[num_row][num_col]) + " ";
+        Log.d("Value indexes", String.valueOf(num_row) + " " + String.valueOf(num_col));
 
-        Log.d("Row", String.valueOf(num_row));
-        Log.d("Col", String.valueOf(num_col));
+        //Append the first value to the solution string
+        solution += String.valueOf(value) + " ";
 
-        //Loop through binary values and convert to decimal
+        //Loop through each arrow value starting at index 1 (second value input)
         for (int i = 1; i < arrow_values.length; i++)
         {
-            //Iterate through each of the other boxes
-            //Add each time there is an up arrow, subtract each time there is a down arrow
-            //Loop through each sub-string within the string to use its value
-            String arrow_value[] = arrow_values[i].split(" ");
+            //Get the current string (arrow value)
+            String current = arrow_values[i];
+            Log.d("Current value", current);
 
-            for (String sub_string : arrow_value) {
-                if (sub_string.equals("r"))
-                    num_col = Math.abs((num_col + 1) % 3); //Move left on the NumPad
-                else if (sub_string.equals("l"))
-                    num_col = Math.abs((num_col - 1) % 3); //Move right on the NumPad
-                else if (sub_string.equals("u"))
-                    num_row = Math.abs((num_row - 1) % 3); //Move up on the NumPad
-                else if (sub_string.equals("d"))
-                    num_row = Math.abs((num_row + 1) % 3); //Move down on the NumPad
+            if (current.equals("r"))
+            {
+                //Move left on the NumPad
+                //Move right on the NumPad
+                num_col = num_col + 1;
+                if (num_col > 2)
+                    num_col = 0;
+            }
+            else if (current.equals("l")) {
+                //Move right on the NumPad
+                num_col = num_col - 1;
+                if (num_col < 0)
+                    num_col = 2;
+            }
+            else if (current.equals("u")) {
+                //Move up on the NumPad
+                num_row = num_row - 1;
+                if (num_row < 0)
+                    num_row = 2;
+            }
+            else if (current.equals("d")) {
+                //Move down on the NumPad
+                num_row = num_row + 1;
+                if (num_row > 2)
+                    num_row = 0;
             }
 
+            //Append the current value to the solution string
             solution += String.valueOf(grid[num_row][num_col]) + " ";
         }
 
-        //Return the result
+        //Return the solution
         return solution;
     }
 
-    //Get number values from the input String
-    private String extractNumber(String input)
-    {
-        //Holds the index of the number value, if it doesn't change the value is invalid
-        int index_of_number = -1;
-
-        //Get each number from the first box
-        String sub_values[] = input.split(" ");
-        String final_number = "";
-
-        //Loop through each of the values at index 0
-        for (String number : sub_values)
-        {
-            //Loop through the array of accepted characters
-            for (int i = 0; i < accepted_arrow_grid.length; i++)
-                //Find the index of the number character
-                if (accepted_arrow_grid[i].equals(number))
-                    //If the value is found, get it's index
-                    index_of_number = i;
-
-            //Only run if we found a character
-            if (index_of_number != -1) {
-                //Set the id equal to its value
-                number = accepted_arrow_gird_values[index_of_number];
-
-                //Append each new number to the String
-                final_number += number;
-            }
-        }
-
-        //Return the string containing the final number
-        return final_number;
-    }
-
-    //Get arrow values from the input String
-    private String extractArrows(String input)
+    //Get roman numeral values from the input String
+    private String extractArrow(String input)
     {
         //Get current string
         String arrow_value = input;
+        //Remove spaces
+        arrow_value = arrow_value.replace(" ", "");
 
-        //Replace icon ids with their corresponding values
-        for (int j = 0; j < accepted_arrow_grid.length; j++)
-            arrow_value = arrow_value.replace(accepted_arrow_grid[j], accepted_arrow_gird_values[j]);
+        //Loop through each roman numeral and get its decimal value
+        for (int i = 0; i < accepted_arrow_line.length; i++) {
+            //Replace numeral with the proper value
+            if (arrow_value.equals(accepted_arrow_line[i])) {
+                arrow_value = accepted_arrow_line_values[i];
+                break; //Break out of the loop to prevent the value from being converted again
+            }
+        }
 
-        //Replace the string at the given index
+        //Return the extracted String
         return arrow_value;
     }
 }
