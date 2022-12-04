@@ -254,6 +254,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     //Rotate the lock icon around the Y-axis with a duration of .5 seconds
     private void clear_animation(ImageView img)
     {
+        //Spin the lock around
         img.animate();
         img.animate().setDuration(500);
         img.animate().rotationYBy(360f);
@@ -278,7 +279,6 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
             public void onAnimationRepeat(Animator animator) {}
         }).start();
     }
-
 
     @Override
     public void onIconDialogCancelled() {}

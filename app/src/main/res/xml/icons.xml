@@ -9,14 +9,14 @@
 
     <!-- LINE ARROW PUZZLE ICONS -->
     <category id="2" name="Arrows">
-        <icon id="1" tags="arrow, left" path="@drawable/arrow_1_left"/>
-        <icon id="2" tags="arrow, right" path="@drawable/arrow_1_right"/>
-        <icon id="3" tags="arrow, up" path="@drawable/arrow_1_up"/>
-        <icon id="4" tags="arrow, down" path="@drawable/arrow_1_down"/>
-        <icon id="5" tags="arrow, left, double" path="@drawable/side_arrow_2_left"/>
-        <icon id="6" tags="arrow, right, double" path="@drawable/side_arrow_2_right"/>
-        <icon id="7" tags="arrow, left, triple" path="@drawable/side_arrow_3_left"/>
-        <icon id="8" tags="arrow, right, triple" path="@drawable/side_arrow_3_right"/>
+        <icon id="1" tags="arrow, left" src="@drawable/arrow_1_left" />
+        <icon id="2" tags="arrow, right" src="@drawable/arrow_1_right" />
+        <icon id="3" tags="arrow, up" src="@drawable/arrow_1_up" />
+        <icon id="4" tags="arrow, down" src="@drawable/arrow_1_down" />
+        <icon id="5" tags="arrow, left, double" src="@drawable/side_arrow_2_left" />
+        <icon id="6" tags="arrow, right, double" src="@drawable/side_arrow_2_right" />
+        <icon id="7" tags="arrow, left, triple" src="@drawable/side_arrow_3_left" />
+        <icon id="8" tags="arrow, right, triple" src="@drawable/side_arrow_3_right" />
     </category>
 
     <!-- ROMAN NUMERALS -->
