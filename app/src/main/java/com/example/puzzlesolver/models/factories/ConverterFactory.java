@@ -3,6 +3,7 @@ package com.example.puzzlesolver.models.factories;
 import android.util.Log;
 
 import com.example.puzzlesolver.models.ArrowGridPuzzle;
+import com.example.puzzlesolver.models.ArrowGridPuzzle2;
 import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.ArrowLinePuzzle2;
 import com.example.puzzlesolver.models.BinaryPuzzle;
@@ -24,7 +25,7 @@ public class ConverterFactory implements PuzzleFactory {
     private final String accepted_roman[] = {"400", "401", "402", "403", "404", "405", "406", "407", "408"}; //ID 2
     private final String accepted_shapes[] = {"200", "201", "202", "203", "204", "205", "206", "207", "208"}; //ID 3
     private final String accepted_arrow_line[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "5", "6", "7", "8"}; //ID 4
-    private final String accepted_arrow_grid[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}; //ID 5
+    private final String accepted_arrow_grid[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "3", "4"}; //ID 5
     private final String accepted_decimal[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315", "316", "317", "318", "319", "320", "321", "322", "323", "324", "325"}; //ID 6
     private final String accepted_character[] = {"500", "501", "502", "503", "504", "505", "506", "507", "508"};//ID 7
     private final String accepted_line[] = {"800", "801", "802", "803", "804", "805", "806", "807", "808"}; //ID 8
@@ -45,7 +46,7 @@ public class ConverterFactory implements PuzzleFactory {
         else if (findType(input) == 4)
             puzzle = new ArrowLinePuzzle2();
         else if (findType(input) == 5)
-            puzzle = new ArrowGridPuzzle();
+            puzzle = new ArrowGridPuzzle2();
         else if (findType(input) == 6)
             puzzle = new DecimalPuzzle();
         else if (findType(input) == 7)
