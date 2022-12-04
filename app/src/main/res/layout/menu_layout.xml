@@ -10,16 +10,13 @@
 
     <!-- MENU TITLE TEXT -->
     <!-- PLACED AT TOP OF SCREEN WITH MARGIN OF 20dp -->
-    <TextView
+    <ImageView
         android:id="@+id/menuTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="175dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="@string/menu_title"
-        android:textColor="@color/button_text"
-        android:textSize="55dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:src="@drawable/frontier_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +27,7 @@
         android:id="@+id/subtitle"
         android:text="@string/subtitle"
         android:textColor="@color/button_text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +40,7 @@
     <!-- CONVERTERS -->
     <Button
         android:id="@+id/converter_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -58,11 +55,11 @@
     <!-- WORD ACTIVITY -->
     <Button
         android:id="@+id/word_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/word_text"
         android:backgroundTint="@color/button_red"
         android:textColor="@color/button_text"
@@ -73,11 +70,11 @@
     <!-- LIGHTS OUT ACTIVITY -->
     <Button
         android:id="@+id/light_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/light_text"
         android:backgroundTint="@color/button_red"
         android:textColor="@color/button_text"
