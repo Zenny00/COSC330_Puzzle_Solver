@@ -7,12 +7,16 @@
         <icon id="701" tags="binary, 1" src="@drawable/binary_1" />
     </category>
 
-    <!-- ARROW ICONS -->
+    <!-- LINE ARROW PUZZLE ICONS -->
     <category id="2" name="Arrows">
-        <icon id="1" tags="arrow,left" path="M20,10V14H11L14.5,17.5L12.08,19.92L4.16,12L12.08,4.08L14.5,6.5L11,10H20Z"/>
-        <icon id="2" tags="arrow,right" path="M4,10V14H13L9.5,17.5L11.92,19.92L19.84,12L11.92,4.08L9.5,6.5L13,10H4Z"/>
-        <icon id="3" tags="arrow,up" path="M14,20H10V11L6.5,14.5L4.08,12.08L12,4.16L19.92,12.08L17.5,14.5L14,11V20Z"/>
-        <icon id="4" tags="arrow,down" path="M10,4H14V13L17.5,9.5L19.92,11.92L12,19.84L4.08,11.92L6.5,9.5L10,13V4Z"/>
+        <icon id="1" tags="arrow, left" path="@drawable/arrow_1_left"/>
+        <icon id="2" tags="arrow, right" path="@drawable/arrow_1_right"/>
+        <icon id="3" tags="arrow, up" path="@drawable/arrow_1_up"/>
+        <icon id="4" tags="arrow, down" path="@drawable/arrow_1_down"/>
+        <icon id="5" tags="arrow, left, double" path="@drawable/side_arrow_2_left"/>
+        <icon id="6" tags="arrow, right, double" path="@drawable/side_arrow_2_right"/>
+        <icon id="7" tags="arrow, left, triple" path="@drawable/side_arrow_3_left"/>
+        <icon id="8" tags="arrow, right, triple" path="@drawable/side_arrow_3_right"/>
     </category>
 
     <!-- ROMAN NUMERALS -->
