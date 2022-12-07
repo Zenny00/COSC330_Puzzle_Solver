@@ -131,68 +131,23 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
             switch (id)
             {
                 case R.id.puzzle_input_1:
-                    input_string_1 += icon.getId() + " ";
+                    input_string_1 = icon.getId() + " ";
                     break;
                 case R.id.puzzle_input_2:
-                    input_string_2 += icon.getId() + " ";
+                    input_string_2 = icon.getId() + " ";
                     break;
                 case R.id.puzzle_input_3:
-                    input_string_3 += icon.getId() + " ";
+                    input_string_3 = icon.getId() + " ";
                     break;
                 case R.id.puzzle_input_4:
-                    input_string_4 += icon.getId() + " ";
+                    input_string_4 = icon.getId() + " ";
                     break;
             }
-        }
-
-        //Drawable image will store the current image and the new image to be appended
-        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { current_view.getDrawable(), icons.get(0).getDrawable() });
-
-        //Append the image to the current image
-        //This code must be placed inside this block to ensure compatibility, may be changed later
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            appended_img.setLayerInsetRight(0, icons.get(0).getDrawable().getIntrinsicWidth());
-            appended_img.setLayerGravity(1, Gravity.AXIS_PULL_AFTER);
         }
 
         //Set the image
-        current_view.setImageDrawable(appended_img);
+        current_view.setImageDrawable(icons.get(0).getDrawable());
     }
-
-    //Solve puzzle on click listener
-    private View.OnClickListener solve_listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            //Convert puzzle input to puzzle
-            problem = puzzleFactory.createPuzzle(input_string);
-
-            //Check if a puzzle matching the input was found, if not print an error message
-            if (problem == null) {
-                puzzle_output.setText("Solution: " + "Invalid Puzzle!");
-                shake_animation(lock_icon);
-            }
-            else
-            {
-                //If puzzle was found setup the problem and find a solution
-                problem.setProblem(input_string);
-
-                //Once the puzzle is setup does it have a solution?
-                //If not print an error message
-                if (problem.findSolution() == null) {
-                    puzzle_output.setText("Solution: " + "None Found!");
-                    shake_animation(lock_icon);
-                }
-                else
-                {
-                    puzzle_output.setText("Solution: " + problem.findSolution());
-                    rotate_animation(lock_icon);
-
-                    //Play unlock sound effect
-                    mp.start();
-                }
-            }
-        }
-    };
 
     public void clearPuzzle(View view)
     {
