@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- BACKGROUND COLORS -->
-    <color name="puzzle_background_gray">#464541</color>
-    <color name="input_background_gray">#595854</color>
+    <color name="puzzle_background_gray">#1C1C1A</color>
+    <color name="input_background_gray">#3F3E3B</color>
 
     <!-- PUZZLE COLOR VALUES -->
     <color name="button_red">#82181D</color>
