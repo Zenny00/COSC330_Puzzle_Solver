@@ -12,7 +12,13 @@ public class MorsePuzzle implements Puzzle {
 
     @Override
     public boolean isSolvable() {
-        return false;
+        //If any of the spaces are empty the puzzle has no solution
+        for (String value : morse_values)
+            if (value.isEmpty())
+                return false;
+
+        //If each input String had a value there is a possible solution
+        return true;
     }
 
     @Override
@@ -49,8 +55,6 @@ public class MorsePuzzle implements Puzzle {
 
         //Loop through each morse value and get its decoded value
         for (int i = 0; i < accepted_morse.length; i++) {
-            Log.d("Input: ", input);
-            Log.d("Output: ", accepted_morse[i]);
             //Replace morse with the proper character
             if (morse_value.equals(accepted_morse[i]))
                 morse_value = accepted_morse_values[i];

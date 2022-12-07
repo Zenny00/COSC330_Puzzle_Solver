@@ -140,6 +140,11 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
 
     public void clearPuzzle(View view)
     {
+        //Setup new media player to play the lock sound effect
+        mp = MediaPlayer.create(this, R.raw.lock_locked);
+        //Play lock sound effect
+        mp.start();
+
         //Clear the image views
         puzzle_input_1.setImageResource(0);
         puzzle_input_2.setImageResource(0);
@@ -230,6 +235,13 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
     @Override
     public void onIconDialogCancelled() {}
 
+    //Back function, ends the intent
+    public void end_converter(View view)
+    {
+        //Finish the intent
+        finish();
+    }
+
     public void callSolver(View view)
     {
         //Call the solve problem function from the superclass
@@ -252,6 +264,11 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
     public void outputError() {
         puzzle_output.setText("Solution: " + "None Found!");
         shake_animation(lock_icon);
+
+        //Setup new media player to play the stuck sound effect
+        mp = MediaPlayer.create(this, R.raw.lock_stuck);
+        //Play stuck sound effect
+        mp.start();
     }
 
     @Override
@@ -260,8 +277,7 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
         rotate_animation(lock_icon);
 
         //Setup new media player to play the unlock sound effect
-        mp = MediaPlayer.create(this, R.raw.unlock_sound);
-
+        mp = MediaPlayer.create(this, R.raw.lock_unlocked);
         //Play unlock sound effect
         mp.start();
     }

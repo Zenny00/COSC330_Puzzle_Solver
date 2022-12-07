@@ -10,7 +10,7 @@
 
     <!-- BACKGROUND COLORS -->
     <color name="puzzle_background_gray">#464541</color>
-    <color name="input_background_gray">#1D1F21</color>
+    <color name="input_background_gray">#595854</color>
 
     <!-- PUZZLE COLOR VALUES -->
     <color name="button_red">#82181D</color>

@@ -23,25 +23,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <Button
-        android:id="@+id/clear_puzzle"
-        android:layout_width="@dimen/small_button_width"
-        android:layout_height="@dimen/small_button_height"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/puzzle_input_height"
-        android:backgroundTint="@color/button_red"
-        android:onClick="clearPuzzle"
-        android:text="@string/clear_btn_text"
-        android:textColor="@color/button_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lock_icon" />
-
     <TextView
         android:id="@+id/puzzle_solution"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/clear_puzzle"
+        android:layout_below="@id/utility_layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/puzzle_solution"
@@ -49,7 +35,7 @@
         android:textColor="@color/button_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clear_puzzle" />
+        app:layout_constraintTop_toBottomOf="@id/utility_layout" />
 
     <Button
         android:id="@+id/solve_puzzle"
@@ -64,6 +50,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/puzzle_solution" />
+
+    <LinearLayout
+        android:id="@+id/utility_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lock_icon">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/small_button_width"
+            android:layout_height="@dimen/small_button_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/puzzle_input_height"
+            android:backgroundTint="@color/button_red"
+            android:onClick="end_converter"
+            android:text="@string/back_btn_text"
+            android:textColor="@color/button_text" />
+
+        <Button
+            android:id="@+id/clear_puzzle"
+            android:layout_width="@dimen/small_button_width"
+            android:layout_height="@dimen/small_button_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/puzzle_input_height"
+            android:backgroundTint="@color/button_red"
+            android:onClick="clearPuzzle"
+            android:text="@string/clear_btn_text"
+            android:textColor="@color/button_text" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
