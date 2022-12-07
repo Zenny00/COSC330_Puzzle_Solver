@@ -5,44 +5,52 @@
     <category id="1" name="Binary">
         <icon id="700" tags="binary, 0" src="@drawable/binary_0" />
         <icon id="701" tags="binary, 1" src="@drawable/binary_1" />
+        <icon id="702" tags="binary, 2" src="@drawable/binary_2" />
+        <icon id="703" tags="binary, 3" src="@drawable/binary_3" />
+        <icon id="704" tags="binary, 4" src="@drawable/binary_4" />
+        <icon id="705" tags="binary, 5" src="@drawable/binary_5" />
+        <icon id="706" tags="binary, 6" src="@drawable/binary_6" />
+        <icon id="707" tags="binary, 7" src="@drawable/binary_7" />
+        <icon id="708" tags="binary, 8" src="@drawable/binary_8" />
+        <icon id="709" tags="binary, 8" src="@drawable/binary_9" />
     </category>
 
-    <!-- LINE ARROW PUZZLE ICONS -->
+    <!-- ARROW PUZZLE ICONS -->
     <category id="2" name="Arrows">
-        <icon id="1" tags="arrow, left" src="@drawable/arrow_1_left" />
-        <icon id="2" tags="arrow, right" src="@drawable/arrow_1_right" />
-        <icon id="3" tags="arrow, up" src="@drawable/arrow_1_up" />
-        <icon id="4" tags="arrow, down" src="@drawable/arrow_1_down" />
-        <icon id="5" tags="arrow, left, double" src="@drawable/side_arrow_2_left" />
-        <icon id="6" tags="arrow, right, double" src="@drawable/side_arrow_2_right" />
-        <icon id="7" tags="arrow, left, triple" src="@drawable/side_arrow_3_left" />
-        <icon id="8" tags="arrow, right, triple" src="@drawable/side_arrow_3_right" />
+        <icon id="1" tags="arrow, 1, left" src="@drawable/arrow_1_left" />
+        <icon id="2" tags="arrow, 4, right" src="@drawable/arrow_1_right" />
+        <icon id="3" tags="arrow, 7, up" src="@drawable/arrow_1_up" />
+        <icon id="4" tags="arrow, 8, down" src="@drawable/arrow_1_down" />
+        <icon id="5" tags="arrow, 2, left, double" src="@drawable/side_arrow_2_left" />
+        <icon id="6" tags="arrow, 5, right, double" src="@drawable/side_arrow_2_right" />
+        <icon id="7" tags="arrow, 3, left, triple" src="@drawable/side_arrow_3_left" />
+        <icon id="8" tags="arrow, 6, right, triple" src="@drawable/side_arrow_3_right" />
     </category>
 
     <!-- ROMAN NUMERALS -->
     <category id="3" name="Roman">
-        <icon id="400" tags="roman, numerals, i, 1, one" src="@drawable/roman_1" />
-        <icon id="401" tags="roman, numerals, ii, 2, two" src="@drawable/roman_2" />
-        <icon id="402" tags="roman, numerals, iii, 3, three" src="@drawable/roman_3" />
-        <icon id="403" tags="roman, numerals, iv, 4, four" src="@drawable/roman_4" />
-        <icon id="404" tags="roman, numerals, v, 5, five" src="@drawable/roman_5" />
-        <icon id="405" tags="roman, numerals, vi, 6, six" src="@drawable/roman_6" />
-        <icon id="406" tags="roman, numerals, vii, 7, seven" src="@drawable/roman_7" />
-        <icon id="407" tags="roman, numerals, viii, 8, eight" src="@drawable/roman_8" />
-        <icon id="408" tags="roman, numerals, ix, 9, nine" src="@drawable/roman_9" />
+        <icon id="400" tags="roman, numerals, 1, i, one" src="@drawable/roman_1" />
+        <icon id="401" tags="roman, numerals, 2, ii, two" src="@drawable/roman_2" />
+        <icon id="402" tags="roman, numerals, 3, iii, three" src="@drawable/roman_3" />
+        <icon id="403" tags="roman, numerals, 4, iv, four" src="@drawable/roman_4" />
+        <icon id="404" tags="roman, numerals, 5, v, five" src="@drawable/roman_5" />
+        <icon id="405" tags="roman, numerals, 6, vi, six" src="@drawable/roman_6" />
+        <icon id="406" tags="roman, numerals, 7, vii, seven" src="@drawable/roman_7" />
+        <icon id="407" tags="roman, numerals, 8, viii, eight" src="@drawable/roman_8" />
+        <icon id="408" tags="roman, numerals, 9, ix, nine" src="@drawable/roman_9" />
     </category>
 
     <!-- SHAPE ICONS -->
     <category id="4" name="Shapes">
-        <icon id="200" tags="shape, triangle" src="@drawable/shape_1" />
-        <icon id="201" tags="shape, circle" src="@drawable/shape_2"/>
-        <icon id="202" tags="shape, square" src="@drawable/shape_3" />
-        <icon id="203" tags="shape, square" src="@drawable/shape_4" />
-        <icon id="204" tags="shape, square" src="@drawable/shape_5" />
-        <icon id="205" tags="shape, square" src="@drawable/shape_6" />
-        <icon id="206" tags="shape, square" src="@drawable/shape_7" />
-        <icon id="207" tags="shape, square" src="@drawable/shape_8" />
-        <icon id="208" tags="shape, square" src="@drawable/shape_9" />
+        <icon id="200" tags="shape, 1, triangle" src="@drawable/shape_1" />
+        <icon id="201" tags="shape, 2, circle" src="@drawable/shape_2"/>
+        <icon id="202" tags="shape, 3, square" src="@drawable/shape_3" />
+        <icon id="203" tags="shape, 4, square" src="@drawable/shape_4" />
+        <icon id="204" tags="shape, 5, square" src="@drawable/shape_5" />
+        <icon id="205" tags="shape, 6, square" src="@drawable/shape_6" />
+        <icon id="206" tags="shape, 7, square" src="@drawable/shape_7" />
+        <icon id="207" tags="shape, 8, square" src="@drawable/shape_8" />
+        <icon id="208" tags="shape, 9, square" src="@drawable/shape_9" />
     </category>
 
     <!-- CHARACTER ICONS -->
@@ -56,54 +64,36 @@
         <icon id="506" tags="character, letter, g, G" src="@drawable/g_char" />
         <icon id="507" tags="character, letter, h, H" src="@drawable/h_char" />
         <icon id="508" tags="character, letter, i, I" src="@drawable/i_char" />
-        <!--
-        <icon id="509" tags="character, letter, j, J" src="@drawable/j_char" />
-        <icon id="510" tags="character, letter, k, K" src="@drawable/k_char" />
-        <icon id="511" tags="character, letter, l, L" src="@drawable/l_char" />
-        <icon id="512" tags="character, letter, m, M" src="@drawable/m_char" />
-        <icon id="513" tags="character, letter, n, N" src="@drawable/n_char" />
-        <icon id="514" tags="character, letter, o, O" src="@drawable/o_char" />
-        <icon id="515" tags="character, letter, p, P" src="@drawable/p_char" />
-        <icon id="516" tags="character, letter, q, Q" src="@drawable/q_char" />
-        <icon id="517" tags="character, letter, r, R" src="@drawable/r_char" />
-        <icon id="518" tags="character, letter, s, S" src="@drawable/s_char" />
-        <icon id="519" tags="character, letter, t, T" src="@drawable/t_char" />
-        <icon id="520" tags="character, letter, u, U" src="@drawable/u_char" />
-        <icon id="521" tags="character, letter, v, V" src="@drawable/v_char" />
-        <icon id="522" tags="character, letter, w, W" src="@drawable/w_char" />
-        <icon id="523" tags="character, letter, x, X" src="@drawable/x_char" />
-        <icon id="524" tags="character, letter, y, Y" src="@drawable/y_char" />
-        <icon id="525" tags="character, letter, z, Z" src="@drawable/z_char" /> -->
     </category>
 
     <!-- NUMBER ICONS -->
     <category id="6" name="Numbers">
-        <icon id="300" tags="1, number" src="@drawable/number_1" />
-        <icon id="301" tags="2, number" src="@drawable/number_2" />
-        <icon id="302" tags="3, number" src="@drawable/number_3" />
-        <icon id="303" tags="4, number" src="@drawable/number_4" />
-        <icon id="304" tags="5, number" src="@drawable/number_5" />
-        <icon id="305" tags="6, number" src="@drawable/number_6" />
-        <icon id="306" tags="7, number" src="@drawable/number_7" />
-        <icon id="307" tags="8, number" src="@drawable/number_8" />
-        <icon id="308" tags="9, number" src="@drawable/number_9" />
-        <icon id="309" tags="10, number" src="@drawable/number_10" />
-        <icon id="310" tags="11, number" src="@drawable/number_11" />
-        <icon id="311" tags="12, number" src="@drawable/number_12" />
-        <icon id="312" tags="13, number" src="@drawable/number_13" />
-        <icon id="313" tags="14, number" src="@drawable/number_14" />
-        <icon id="314" tags="15, number" src="@drawable/number_15" />
-        <icon id="315" tags="16, number" src="@drawable/number_16" />
-        <icon id="316" tags="17, number" src="@drawable/number_17" />
-        <icon id="317" tags="18, number" src="@drawable/number_18" />
-        <icon id="318" tags="19, number" src="@drawable/number_19" />
-        <icon id="319" tags="20, number" src="@drawable/number_20" />
-        <icon id="320" tags="21, number" src="@drawable/number_21" />
-        <icon id="321" tags="22, number" src="@drawable/number_22" />
-        <icon id="322" tags="23, number" src="@drawable/number_23" />
-        <icon id="323" tags="24, number" src="@drawable/number_24" />
-        <icon id="324" tags="25, number" src="@drawable/number_25" />
-        <icon id="325" tags="26, number" src="@drawable/number_26" />
+        <icon id="300" tags="number, a, 1" src="@drawable/number_1" />
+        <icon id="301" tags="number, b, 2" src="@drawable/number_2" />
+        <icon id="302" tags="number, c, 3" src="@drawable/number_3" />
+        <icon id="303" tags="number, d, 4" src="@drawable/number_4" />
+        <icon id="304" tags="number, e, 5" src="@drawable/number_5" />
+        <icon id="305" tags="number, f, 6" src="@drawable/number_6" />
+        <icon id="306" tags="number, g, 7" src="@drawable/number_7" />
+        <icon id="307" tags="number, h, 8" src="@drawable/number_8" />
+        <icon id="308" tags="number, i, 9" src="@drawable/number_9" />
+        <icon id="309" tags="number, j, 10" src="@drawable/number_10" />
+        <icon id="310" tags="number, k, 11" src="@drawable/number_11" />
+        <icon id="311" tags="number, l, 12" src="@drawable/number_12" />
+        <icon id="312" tags="number, m, 13" src="@drawable/number_13" />
+        <icon id="313" tags="number, n, 14" src="@drawable/number_14" />
+        <icon id="314" tags="number, o, 15" src="@drawable/number_15" />
+        <icon id="315" tags="number, p, 16" src="@drawable/number_16" />
+        <icon id="316" tags="number, q, 17" src="@drawable/number_17" />
+        <icon id="317" tags="number, r, 18" src="@drawable/number_18" />
+        <icon id="318" tags="number, s, 19" src="@drawable/number_19" />
+        <icon id="319" tags="number, t, 20" src="@drawable/number_20" />
+        <icon id="320" tags="number, u, 21" src="@drawable/number_21" />
+        <icon id="321" tags="number, v, 22" src="@drawable/number_22" />
+        <icon id="322" tags="number, w, 23" src="@drawable/number_23" />
+        <icon id="323" tags="number, x, 24" src="@drawable/number_24" />
+        <icon id="324" tags="number, y, 25" src="@drawable/number_25" />
+        <icon id="325" tags="number, z, 26" src="@drawable/number_26" />
     </category>
 
     <!-- MORSE CODE ICONS -->
@@ -149,13 +139,13 @@
     <!-- LINE PUZZLE ICONS -->
     <category id="8" name="Line">
         <icon id="800" tags="line, 1" src="@drawable/line_1" />
-        <icon id="801" tags="line, 1" src="@drawable/line_2" />
-        <icon id="802" tags="line, 1" src="@drawable/line_3" />
-        <icon id="803" tags="line, 1" src="@drawable/line_4" />
-        <icon id="804" tags="line, 1" src="@drawable/line_5" />
-        <icon id="805" tags="line, 1" src="@drawable/line_6" />
-        <icon id="806" tags="line, 1" src="@drawable/line_7" />
-        <icon id="807" tags="line, 1" src="@drawable/line_8" />
-        <icon id="808" tags="line, 1" src="@drawable/line_9" />
+        <icon id="801" tags="line, 2" src="@drawable/line_2" />
+        <icon id="802" tags="line, 3" src="@drawable/line_3" />
+        <icon id="803" tags="line, 4" src="@drawable/line_4" />
+        <icon id="804" tags="line, 5" src="@drawable/line_5" />
+        <icon id="805" tags="line, 6" src="@drawable/line_6" />
+        <icon id="806" tags="line, 7" src="@drawable/line_7" />
+        <icon id="807" tags="line, 8" src="@drawable/line_8" />
+        <icon id="808" tags="line, 9" src="@drawable/line_9" />
     </category>
 </icons>

@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tags>
-    <!-- ARROW TAGS -->
+    <!-- ARROW TAG -->
     <tag name="arrow">Arrow</tag>
-    <tag name="left">Left</tag>
-    <tag name="right">Right</tag>
-    <tag name="up">Up</tag>
-    <tag name="down">Down</tag>
 
-    <!-- NUMBER TAGS -->
+    <!-- NUMBER TAG -->
     <tag name="number">number</tag>
-    <tag name="one">one</tag>
-    <tag name="two">two</tag>
-    <tag name="three">three</tag>
-    <tag name="four">four</tag>
-    <tag name="five">five</tag>
-    <tag name="six">six</tag>
-    <tag name="seven">seven</tag>
-    <tag name="eight">eight</tag>
-    <tag name="nine">nine</tag>
-    <tag name="zero">zero</tag>
-    <tag name="1">1</tag>
-    <tag name="2">2</tag>
-    <tag name="3">3</tag>
-    <tag name="4">4</tag>
-    <tag name="5">5</tag>
-    <tag name="6">6</tag>
-    <tag name="7">7</tag>
-    <tag name="8">8</tag>
-    <tag name="9">9</tag>
-    <tag name="0">0</tag>
+
+    <!-- ROMAN TAG -->
+    <tag name="roman">roman</tag>
+
+    <!-- SHAPE TAG -->
+    <tag name="shape">shape</tag>
+
+    <!-- LINE TAG -->
+    <tag name="line">line</tag>
+
+    <!-- MORSE TAG -->
+    <tag name="morse">morse</tag>
+
+    <!-- BINARY TAG -->
+    <tag name="binary">binary</tag>
+
+    <!-- CHARACTER TAG -->
+    <tag name="character">character</tag>
+
 </tags>

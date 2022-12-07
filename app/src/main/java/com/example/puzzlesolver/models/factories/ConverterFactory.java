@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ConverterFactory implements PuzzleFactory {
 
     //Constants to hold the accepted icons for each puzzle
-    private final String accepted_binary[] = {"700", "701"}; //ID 0
+    private final String accepted_binary[] = {"700", "701", "702", "703", "704", "705", "706", "707", "708", "709"}; //ID 0
     private final String accepted_morse[] = {"100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134"}; //ID 1
     private final String accepted_roman[] = {"400", "401", "402", "403", "404", "405", "406", "407", "408"}; //ID 2
     private final String accepted_shapes[] = {"200", "201", "202", "203", "204", "205", "206", "207", "208"}; //ID 3
