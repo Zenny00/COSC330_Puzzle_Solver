@@ -2,9 +2,9 @@ package com.example.puzzlesolver.models;
 
 //Super class that can be overridden by subclasses
 public class ConverterPuzzle implements Puzzle {
-    private String accepted_ids[] = {"700", "701", "702", "703", "704", "705", "706", "707", "708", "709"}; //ID 0
-    private String accepted_values[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    private String output_values[];
+    protected String accepted_ids[];
+    protected String accepted_values[];
+    protected String output_values[];
 
     public ConverterPuzzle(String accepted_ids[], String accepted_values[])
     {
@@ -53,7 +53,7 @@ public class ConverterPuzzle implements Puzzle {
     }
 
     //Get character values from the input String
-    private String extractValues(String input)
+    protected String extractValues(String input)
     {
         //Get current string
         String binary_value = input;

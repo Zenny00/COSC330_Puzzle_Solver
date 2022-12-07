@@ -2,10 +2,12 @@ package com.example.puzzlesolver.models;
 
 import android.util.Log;
 
-public class ArrowGridPuzzle implements Puzzle {
-    String accepted_arrow_line[] = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "3", "4"}; //ID 5
-    String accepted_arrow_line_values[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "l", "r", "u", "d"}; //Icon values
-    String arrow_values[];
+public class ArrowGridPuzzle extends ConverterPuzzle {
+    //Call the superclass constructor to build a new converter puzzle
+    public ArrowGridPuzzle()
+    {
+        super(new String[]{"300", "301", "302", "303", "304", "305", "306", "307", "308", "1", "2", "3", "4"}, new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "l", "r", "u", "d"});
+    }
 
     @Override
     public boolean isSolvable() {
@@ -15,7 +17,7 @@ public class ArrowGridPuzzle implements Puzzle {
         //Check if the first value contains a digit
         try
         {
-            starting_value = Integer.parseInt(arrow_values[0]);
+            starting_value = Integer.parseInt(output_values[0]);
         } catch (NumberFormatException e)
         {
             return false;
@@ -26,27 +28,12 @@ public class ArrowGridPuzzle implements Puzzle {
             return false;
 
         //If any of the spaces are empty the puzzle has no solution
-        for (String value : arrow_values)
+        for (String value : output_values)
             if (value.isEmpty())
                 return false;
 
         //If each input String had a value there is a possible solution
         return true;
-    }
-
-    @Override
-    public void setProblem(String input) {
-        //Split the input string on the "-" delimiter
-        String input_values[] = input.split("-");
-
-        //Loop through the entire list of characters, not special values needed
-        //Convert values from ids to the correct character
-        for (int i = 0; i < input_values.length; i++) {
-            input_values[i] = extractArrow(input_values[i]);
-            Log.d("Current value", input_values[i]);
-        }
-
-        arrow_values = input_values;
     }
 
     @Override
@@ -59,7 +46,7 @@ public class ArrowGridPuzzle implements Puzzle {
         String solution = "";
 
         //Holds the initial value
-        int value = Integer.parseInt(arrow_values[0]);
+        int value = Integer.parseInt(output_values[0]);
 
         //Holds the indexes for the current value
         int num_row = -1;
@@ -79,20 +66,16 @@ public class ArrowGridPuzzle implements Puzzle {
                 if (grid[row][column] == value){
                     num_row = row;
                     num_col = column;
-                    Log.d("Value found", String.valueOf(value));
                 }
-
-        Log.d("Value indexes", String.valueOf(num_row) + " " + String.valueOf(num_col));
 
         //Append the first value to the solution string
         solution += String.valueOf(value) + " ";
 
         //Loop through each arrow value starting at index 1 (second value input)
-        for (int i = 1; i < arrow_values.length; i++)
+        for (int i = 1; i < output_values.length; i++)
         {
             //Get the current string (arrow value)
-            String current = arrow_values[i];
-            Log.d("Current value", current);
+            String current = output_values[i];
 
             if (current.equals("r"))
             {
@@ -129,19 +112,20 @@ public class ArrowGridPuzzle implements Puzzle {
         return solution;
     }
 
-    //Get roman numeral values from the input String
-    private String extractArrow(String input)
+    //Get arrow values from the input String
+    @Override
+    protected String extractValues(String input)
     {
         //Get current string
         String arrow_value = input;
         //Remove spaces
         arrow_value = arrow_value.replace(" ", "");
 
-        //Loop through each roman numeral and get its decimal value
-        for (int i = 0; i < accepted_arrow_line.length; i++) {
+        //Loop through each id and get its value
+        for (int i = 0; i < accepted_ids.length; i++) {
             //Replace numeral with the proper value
-            if (arrow_value.equals(accepted_arrow_line[i])) {
-                arrow_value = accepted_arrow_line_values[i];
+            if (arrow_value.equals(accepted_ids[i])) {
+                arrow_value = accepted_values[i];
                 break; //Break out of the loop to prevent the value from being converted again
             }
         }
