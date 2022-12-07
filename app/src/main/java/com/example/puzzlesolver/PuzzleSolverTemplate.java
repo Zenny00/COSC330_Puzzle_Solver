@@ -1,19 +1,22 @@
 package com.example.puzzlesolver;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.puzzlesolver.models.Puzzle;
 
 public abstract class PuzzleSolverTemplate extends AppCompatActivity {
-    private Puzzle problem;
+    public Puzzle problem;
 
     //Find solution to the puzzle
     public final void solveProblem()
     {
         //Read problem in from the view
         readProblem();
+
+        Log.d("Is solvable: ", String.valueOf(notSolvable()));
 
         //If the puzzle has a solution display it, otherwise output an error
         if (notSolvable())

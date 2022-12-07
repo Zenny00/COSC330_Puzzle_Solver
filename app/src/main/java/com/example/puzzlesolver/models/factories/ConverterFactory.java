@@ -7,6 +7,7 @@ import com.example.puzzlesolver.models.ArrowLinePuzzle;
 import com.example.puzzlesolver.models.BinaryPuzzle;
 import com.example.puzzlesolver.models.CharacterPuzzle;
 import com.example.puzzlesolver.models.DecimalPuzzle;
+import com.example.puzzlesolver.models.InvalidPuzzle;
 import com.example.puzzlesolver.models.LinePuzzle;
 import com.example.puzzlesolver.models.MorsePuzzle;
 import com.example.puzzlesolver.models.Puzzle;
@@ -51,6 +52,8 @@ public class ConverterFactory implements PuzzleFactory {
             puzzle = new CharacterPuzzle();
         else if (findType(input) == 8)
             puzzle = new LinePuzzle();
+        else
+            puzzle = new InvalidPuzzle(); //Puzzle does not exist
 
         return puzzle;
     }

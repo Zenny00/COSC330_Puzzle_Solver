@@ -3,6 +3,7 @@ package com.example.puzzlesolver;
 import android.animation.Animator;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ import com.maltaisn.icondialog.pack.IconPack;
 
 import java.util.List;
 
-public class ConverterScreen extends AppCompatActivity implements IconDialog.Callback {
+public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.Callback {
 
     private static final String ICON_DIALOG_TAG = "icon-dialog";
 
@@ -57,6 +58,10 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private Button solve_btn;
     private PuzzleFactory puzzleFactory;
 
+    //Audio player for playing the lock and unlock sound effect
+    private MediaPlayer mp;
+    private String input_string;
+
     private IconDialog iconDialog;
 
     @Override
@@ -83,7 +88,7 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
         puzzle_input_4 = (AppCompatImageView) findViewById(R.id.puzzle_input_4);
 
         //Setup new button listener
-        solve_btn.setOnClickListener(solve_listener);
+        //solve_btn.setOnClickListener(solve_listener);
 
         // If dialog is already added to fragment manager, get it. If not, create a new instance.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
@@ -158,35 +163,33 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
     private View.OnClickListener solve_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //Get puzzle input string from the StringBuilders
-            String input_string = input_string_1.trim() + "-" + input_string_2.trim() + "-" + input_string_3.trim() + "-" + input_string_4.trim();
-            Log.d("Input string: ", input_string);
-
             //Convert puzzle input to puzzle
-            Puzzle puzzle = puzzleFactory.createPuzzle(input_string);
+            problem = puzzleFactory.createPuzzle(input_string);
 
             //Check if a puzzle matching the input was found, if not print an error message
-            if (puzzle == null) {
+            if (problem == null) {
                 puzzle_output.setText("Solution: " + "Invalid Puzzle!");
                 shake_animation(lock_icon);
             }
             else
             {
                 //If puzzle was found setup the problem and find a solution
-                puzzle.setProblem(input_string);
+                problem.setProblem(input_string);
 
                 //Once the puzzle is setup does it have a solution?
                 //If not print an error message
-                if (puzzle.findSolution() == null) {
+                if (problem.findSolution() == null) {
                     puzzle_output.setText("Solution: " + "None Found!");
                     shake_animation(lock_icon);
                 }
                 else
                 {
-                    puzzle_output.setText("Solution: " + puzzle.findSolution());
+                    puzzle_output.setText("Solution: " + problem.findSolution());
                     rotate_animation(lock_icon);
-                }
 
+                    //Play unlock sound effect
+                    mp.start();
+                }
             }
         }
     };
@@ -282,4 +285,40 @@ public class ConverterScreen extends AppCompatActivity implements IconDialog.Cal
 
     @Override
     public void onIconDialogCancelled() {}
+
+    public void callSolver(View view)
+    {
+        //Call the solve problem function from the superclass
+        solveProblem();
+    }
+
+    @Override
+    public void readProblem() {
+        //Get puzzle input string from the StringBuilders
+        input_string = input_string_1.trim() + "-" + input_string_2.trim() + "-" + input_string_3.trim() + "-" + input_string_4.trim();
+
+        //Convert puzzle input to puzzle
+        problem = puzzleFactory.createPuzzle(input_string);
+
+        //If puzzle was found setup the problem and find a solution
+        problem.setProblem(input_string);
+    }
+
+    @Override
+    public void outputError() {
+        puzzle_output.setText("Solution: " + "None Found!");
+        shake_animation(lock_icon);
+    }
+
+    @Override
+    public void outputSolution() {
+        puzzle_output.setText("Solution: " + problem.findSolution());
+        rotate_animation(lock_icon);
+
+        //Setup new media player to play the unlock sound effect
+        mp = MediaPlayer.create(this, R.raw.unlock_sound);
+
+        //Play unlock sound effect
+        mp.start();
+    }
 }
