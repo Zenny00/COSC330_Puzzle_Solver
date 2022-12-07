@@ -94,29 +94,18 @@ public class ConverterScreen extends PuzzleSolverTemplate implements IconDialog.
         IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
         iconDialog = dialog != null ? dialog
                 : IconDialog.newInstance(new IconDialogSettings.Builder().build());
-
-        registerListeners();
     }
 
-    //Setup "on click" listeners for the image views
-    private void registerListeners()
+    //Function called by the inputs
+    public void dialog_input(View view)
     {
-        puzzle_input_1.setOnClickListener(input_tap_listener);
-        puzzle_input_2.setOnClickListener(input_tap_listener);
-        puzzle_input_3.setOnClickListener(input_tap_listener);
-        puzzle_input_4.setOnClickListener(input_tap_listener);
+        //Get the id of the current view
+        current_view = (AppCompatImageView) view;
+        id = current_view.getId();
+
+        //Show the dialog box
+        iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
     }
-
-    //BAD WAY TO DO THIS BUT IT WILL HAVE TO DO FOR NOW
-    private View.OnClickListener input_tap_listener= new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            current_view = (AppCompatImageView) view;
-            id = current_view.getId();
-
-            iconDialog.show(getSupportFragmentManager(), ICON_DIALOG_TAG);
-        }
-    };
 
     @Nullable
     @Override
