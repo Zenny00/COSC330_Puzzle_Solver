@@ -43,7 +43,6 @@ public class ArrowLinePuzzle implements Puzzle {
         //Convert values from ids to the correct character
         for (int i = 0; i < input_values.length; i++) {
             input_values[i] = extractArrow(input_values[i]);
-            Log.d("Current value", input_values[i]);
         }
 
         arrow_values = input_values;
