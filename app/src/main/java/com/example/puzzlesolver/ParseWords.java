@@ -118,6 +118,7 @@ public class ParseWords {
     {
         printer = "Nothing Entered";
     }
+
     public String getPrinter()
     {
         if(printer.length() > 0)

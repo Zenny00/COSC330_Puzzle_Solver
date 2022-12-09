@@ -124,11 +124,11 @@ public class WordScrambleScreen extends AppCompatActivity {
 
     public void clearPuzzle(View view)
     {
+
+        if (puzzle_input_1.getText().length() > 0)
+            ps.clearPrinter();
+
         puzzle_input_1.setText("");
-        ps.clearPrinter();
-        //Reset the lock icon
-        if (lock_icon.getDrawable().getConstantState().equals(lock_icon.getContext().getDrawable(R.drawable.lock_unlock_icon).getConstantState()))
-            clear_animation(lock_icon);
 
         //Reset solution
         puzzle_output.setText("Solution:");
