@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -21,10 +22,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- SUBTEXT -->
     <TextView
-        android:layout_below="@id/menuTitle"
         android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/subtitle"
         android:textColor="@color/button_text"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -36,7 +37,6 @@
         app:layout_constraintTop_toBottomOf="@id/menuTitle" />
 
     <!-- MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
-
     <!-- CONVERTERS -->
     <Button
         android:id="@+id/converter_btn"
@@ -48,6 +48,7 @@
         android:text="@string/convert_text"
         android:backgroundTint="@color/button_red"
         android:textColor="@color/button_text"
+        android:onClick="launchConverterActivity"
         app:layout_constraintTop_toBottomOf="@id/subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -63,6 +64,7 @@
         android:text="@string/word_text"
         android:backgroundTint="@color/button_red"
         android:textColor="@color/button_text"
+        android:onClick="launchWordActivity"
         app:layout_constraintTop_toBottomOf="@+id/converter_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,11 +80,11 @@
         android:text="@string/light_text"
         android:backgroundTint="@color/button_red"
         android:textColor="@color/button_text"
+        android:onClick="launchLightsActivity"
         app:layout_constraintTop_toBottomOf="@id/word_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- SLIDING PUZZLE ACTIVITY -->
     <!-- THIS IS NO LONGER GOING TO BE IMPLEMENTED -->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

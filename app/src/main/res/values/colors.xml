@@ -8,6 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- LIGHTS OUT COLORS -->
+    <color name="transparent">#00FFFFFF</color>
+    <color name="red_btn">#870E13</color>
+
     <!-- BACKGROUND COLORS -->
     <color name="puzzle_background_gray">#1C1C1A</color>
     <color name="input_background_gray">#3F3E3B</color>

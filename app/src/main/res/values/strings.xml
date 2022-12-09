@@ -9,11 +9,22 @@
     <string name="light_text">Lights Out</string>
     <string name="slider_text">Picture Slider</string>
 
+    <!-- LIGHTS OUT ITEMS -->
+    <string name="num_rows">rows</string>
+    <string name="num_cols">columns</string>
+    <string name="submit_btn">submit</string>
+    <string name="exit_btn">return</string>
+    <string name="set_btn">set</string>
+    <string name="index_err_msg">Please check your grid dimensions!</string>
+    <string name="btn_state_on">ON</string>
+    <string name="btn_state_off">OFF</string>
+    <string name="btn_state_disabled">DISABLED</string>
+
     <!-- CONVERTER STRINGS -->
     <string name="open_btn_text">Open Icon Dialog</string>
     <string name="solve_btn_text">Solve</string>
     <string name="clear_btn_text">Clear</string>
     <string name="back_btn_text">Back</string>
     <string name="puzzle_solution">Solution: </string>
-
+    
 </resources>

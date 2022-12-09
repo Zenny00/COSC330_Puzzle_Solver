@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lightsScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/row_input"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:ems="20"
+            android:hint="@string/num_rows"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/col_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="20"
+            android:hint="@string/num_cols"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_btn"
+        android:onClick="setDisabled"
+        android:text="@string/set_btn"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/lightGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_panel_background"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:stretchColumns="0,1,2,3,4,5,6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/r1c1"
+                style="@android:style/Widget.DeviceDefault.ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r1c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r1c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r1c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r1c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r1c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/r2c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r2c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r2c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r2c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r2c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r2c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/r3c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r3c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r3c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r3c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r3c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r3c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/r4c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r4c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r4c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r4c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r4c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r4c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/r5c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r5c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r5c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r5c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r5c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r5c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <ImageButton
+                android:id="@+id/r6c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r6c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r6c3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r6c4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r6c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+
+            <ImageButton
+                android:id="@+id/r6c6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contentDescription='@string/btn_state_off'
+                android:onClick="toggleBtn"
+                app:srcCompat="@drawable/lights_off" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/red_btn"
+        android:onClick="gotoHome"
+        android:text="@string/exit_btn"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/lightGrid" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/red_btn"
+        android:onClick="callSolver"
+        android:text="@string/submit_btn"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lightGrid" />
+
+    <TextView
+        android:id="@+id/lights_out_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
