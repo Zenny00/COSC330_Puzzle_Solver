@@ -95,7 +95,7 @@ public class ParseWords {
             if (index >= 0) {
                 found.add((String) objArray[index]);
             }
-            if(!found.isEmpty())
+            if(found != null && !found.isEmpty())
                 isSolved = true;
         }
         return found;
@@ -103,11 +103,15 @@ public class ParseWords {
 
     public void display(List<String> list)
     {
-        Set<String> hashSet = new LinkedHashSet(list);
-        ArrayList<String> removeDuplicates = new ArrayList(hashSet);
+        if (list != null && !list.isEmpty()) {
+            Set<String> hashSet = new LinkedHashSet(list);
+            ArrayList<String> removeDuplicates = new ArrayList(hashSet);
 
-        System.out.println(removeDuplicates);
-        printer = String.valueOf(removeDuplicates);
+            System.out.println(removeDuplicates);
+            printer = String.valueOf(removeDuplicates);
+        } else {
+            printer = "No solutions found";
+        }
     }
 
     public void clearPrinter()
@@ -116,7 +120,7 @@ public class ParseWords {
     }
     public String getPrinter()
     {
-        if(printer.length() >= 0)
+        if(printer.length() > 0)
         {
             return printer;
         }

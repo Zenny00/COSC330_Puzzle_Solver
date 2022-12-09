@@ -21,7 +21,7 @@
             android:id="@+id/row_input"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/transparent"
             android:ems="20"
             android:hint="@string/num_rows"
             android:inputType="number" />
@@ -38,7 +38,7 @@
             android:id="@+id/col_input"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/transparent"
             android:ems="20"
             android:hint="@string/num_cols"
             android:inputType="number" />
@@ -47,12 +47,12 @@
 
     <Button
         android:id="@+id/button3"
-        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@color/red_btn"
+        android:backgroundTint="@color/red_btn"
         android:onClick="setDisabled"
         android:text="@string/set_btn"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -468,27 +468,27 @@
 
     <Button
         android:id="@+id/button"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/red_btn"
+        android:backgroundTint="@color/red_btn"
         android:onClick="gotoHome"
         android:text="@string/exit_btn"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/lightGrid" />
 
     <Button
         android:id="@+id/button2"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@color/red_btn"
+        android:backgroundTint="@color/red_btn"
         android:onClick="callSolver"
         android:text="@string/submit_btn"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lightGrid" />

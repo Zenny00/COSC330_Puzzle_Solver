@@ -28,6 +28,7 @@ public class MainMenu extends AppCompatActivity {
 
     }
     public void launchWordActivity(View view) {
-
+        Intent intent = new Intent(getApplicationContext(), WordScrambleScreen.class);
+        startActivity(intent);
     }
 }

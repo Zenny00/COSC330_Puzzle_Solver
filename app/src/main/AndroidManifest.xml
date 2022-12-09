@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar"
-        tools:targetApi="31">
+        tools:targetApi="33">
 
         <!-- MAIN MENU -->
         <activity
@@ -32,6 +32,15 @@
         
         <!-- LIGHTS OUT -->
         <activity android:name=".LightsOutActivity" />
+
+        <!-- WORD SCRAMBLE ACTIVITY -->
+        <activity
+            android:name=".WordScrambleScreen"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainMenu" />
+        </activity>
 
         <!-- CONVERTER ACTIVITY -->
         <activity

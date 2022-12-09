@@ -35,14 +35,11 @@ import com.maltaisn.icondialog.pack.IconPack;
 
 import java.util.List;
 
-public class WordScrambleScreen extends AppCompatActivity implements IconDialog.Callback {
-
-    private static final String ICON_DIALOG_TAG = "icon-dialog";
-
+public class WordScrambleScreen extends AppCompatActivity {
     //Private data members to hold view components
     private TextView puzzle_output;
     private ImageView lock_icon;
-    private  ParseWords ps;
+    private ParseWords ps;
 
     //Holds references to the four puzzle inputs
     private TextInputEditText puzzle_input_1;
@@ -58,7 +55,6 @@ public class WordScrambleScreen extends AppCompatActivity implements IconDialog.
     private Drawable icon_tray;
     private Button solve_btn;
     private PuzzleFactory puzzleFactory;
-    private IconDialog iconDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,15 +76,11 @@ public class WordScrambleScreen extends AppCompatActivity implements IconDialog.
         //Get references to the four puzzle view components
         puzzle_input_1 = (TextInputEditText) findViewById(R.id.Input);
 
+
         //Setup new button listener
         solve_btn.setOnClickListener(solve_listener);
 
-        // If dialog is already added to fragment manager, get it. If not, create a new instance.
-        IconDialog dialog = (IconDialog) getSupportFragmentManager().findFragmentByTag(ICON_DIALOG_TAG);
-        iconDialog = dialog != null ? dialog
-                : IconDialog.newInstance(new IconDialogSettings.Builder().build());
-
-        puzzle_input_1.setOnEditorActionListener(
+        /*puzzle_input_1.setOnEditorActionListener(
                 new TextView.OnEditorActionListener(){
                     @Override
                     public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
@@ -102,45 +94,31 @@ public class WordScrambleScreen extends AppCompatActivity implements IconDialog.
                                 ps = new ParseWords(perm_string);
                                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                                 imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-
                             }
                             return true;
                         }
                         return false;
                     }
-                });
+                });*/
 
-    }
-
-    @Nullable
-    @Override
-    public IconPack getIconDialogIconPack() {
-        return ((ConverterState) getApplication()).getIconPack();
-    }
-
-    @Override
-    public void onIconDialogIconsSelected(@NonNull IconDialog dialog, @NonNull List<Icon> icons) {
-
-        //Drawable image will store the current image and the new image to be appended
-        LayerDrawable appended_img = new LayerDrawable(new Drawable[] { current_view.getDrawable(), icons.get(0).getDrawable() });
-
-        //Append the image to the current image
-        //This code must be placed inside this block to ensure compatibility, may be changed later
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            appended_img.setLayerInsetRight(0, icons.get(0).getDrawable().getIntrinsicWidth());
-            appended_img.setLayerGravity(1, Gravity.AXIS_PULL_AFTER);
-        }
-
-        //Set the image
-        current_view.setImageDrawable(appended_img);
     }
 
     //Solve puzzle on click listener
     private View.OnClickListener solve_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //Get puzzle input string from the StringBuilders
-            puzzle_output.setText("Solution: " + ps.getPrinter());
+            if(puzzle_input_1.getText().length() > 0) {
+                String perm_string = puzzle_input_1.getText().toString();
+
+                ps = new ParseWords(perm_string);
+                //InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                //imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+
+                //Get puzzle input string from the StringBuilders
+                puzzle_output.setText("Solution: " + ps.getPrinter());
+            } else {
+                puzzle_output.setText("No Text Entered");
+            }
         }
     };
 
@@ -221,10 +199,5 @@ public class WordScrambleScreen extends AppCompatActivity implements IconDialog.
             @Override
             public void onAnimationRepeat(Animator animator) {}
         }).start();
-    }
-
-    @Override
-    public void onIconDialogCancelled() {
-
     }
 }
