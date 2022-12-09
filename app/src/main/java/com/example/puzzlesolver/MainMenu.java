@@ -14,13 +14,15 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.menu_layout);
     }
 
+
     // BUTTON FUNCTIONS
     public void launchLightsActivity(View view) {
         Intent intent = new Intent(getApplicationContext(), LightsOutActivity.class);
         startActivity(intent);
     }
     public void launchConverterActivity(View view) {
-
+        Intent intent = new Intent(getApplicationContext(), ConverterScreen.class);
+        startActivity(intent);
     }
     public void launchSliderActivity(View view) {
 
@@ -28,5 +30,4 @@ public class MainMenu extends AppCompatActivity {
     public void launchWordActivity(View view) {
 
     }
-
 }

@@ -3,4 +3,17 @@
     <!-- MAIN MENU DIMENSIONS -->
     <dimen name="btn_margin">25dp</dimen>
     <dimen name="title_margin">150dp</dimen>
+
+    <!-- CONVERTER DIMENSIONS -->
+    <dimen name="puzzle_margin">25dp</dimen>
+    <dimen name="input_padding">25dp</dimen>
+    <dimen name="puzzle_input_width">70dp</dimen>
+    <dimen name="puzzle_input_height">35dp</dimen>
+    <dimen name="button_width">250dp</dimen>
+    <dimen name="button_height">65dp</dimen>
+
+    <dimen name="small_button_width">100dp</dimen>
+    <dimen name="small_button_height">50dp</dimen>
+
+
 </resources>

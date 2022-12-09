@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- LAYOUT CONFIGURATION -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/puzzle_background_gray">
+
+    <!-- HOLDS THE LOCK ICON -->
+    <ImageView
+        android:id="@+id/lock_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/lock_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/puzzle_solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/utility_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/puzzle_solution"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/utility_layout" />
+
+    <Button
+        android:id="@+id/solve_puzzle"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/button_red"
+        android:text="@string/solve_btn_text"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/button_text"
+        android:onClick="callSolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/puzzle_solution" />
+
+    <LinearLayout
+        android:id="@+id/utility_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lock_icon">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/small_button_width"
+            android:layout_height="@dimen/small_button_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/puzzle_input_height"
+            android:backgroundTint="@color/button_red"
+            android:onClick="end_converter"
+            android:text="@string/back_btn_text"
+            android:textColor="@color/button_text" />
+
+        <Button
+            android:id="@+id/clear_puzzle"
+            android:layout_width="@dimen/small_button_width"
+            android:layout_height="@dimen/small_button_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/puzzle_input_height"
+            android:backgroundTint="@color/button_red"
+            android:onClick="clearPuzzle"
+            android:text="@string/clear_btn_text"
+            android:textColor="@color/button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/puzzle_input_1"
+            android:layout_width="@dimen/puzzle_input_width"
+            android:layout_height="@dimen/puzzle_input_height"
+            android:layout_marginTop="@dimen/puzzle_margin"
+            android:background="@color/input_background_gray"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="1dp"
+            android:onClick="dialog_input"
+            android:tint="@color/button_text" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/puzzle_input_2"
+            android:layout_width="@dimen/puzzle_input_width"
+            android:layout_height="@dimen/puzzle_input_height"
+            android:layout_marginLeft="@dimen/input_padding"
+            android:layout_marginTop="@dimen/puzzle_margin"
+            android:background="@color/input_background_gray"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="1dp"
+            android:onClick="dialog_input"
+            android:tint="@color/button_text" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/puzzle_input_3"
+            android:layout_width="@dimen/puzzle_input_width"
+            android:layout_height="@dimen/puzzle_input_height"
+            android:layout_marginLeft="@dimen/input_padding"
+            android:layout_marginTop="@dimen/puzzle_margin"
+            android:background="@color/input_background_gray"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="1dp"
+            android:onClick="dialog_input"
+            android:tint="@color/button_text" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/puzzle_input_4"
+            android:layout_width="@dimen/puzzle_input_width"
+            android:layout_height="@dimen/puzzle_input_height"
+            android:layout_marginLeft="@dimen/input_padding"
+            android:layout_marginTop="@dimen/puzzle_margin"
+            android:background="@color/input_background_gray"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="1dp"
+            android:onClick="dialog_input"
+            android:tint="@color/button_text" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

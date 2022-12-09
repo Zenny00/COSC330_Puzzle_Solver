@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tags>
+    <!-- ARROW TAG -->
+    <tag name="arrow">Arrow</tag>
+
+    <!-- NUMBER TAG -->
+    <tag name="number">number</tag>
+
+    <!-- ROMAN TAG -->
+    <tag name="roman">roman</tag>
+
+    <!-- SHAPE TAG -->
+    <tag name="shape">shape</tag>
+
+    <!-- LINE TAG -->
+    <tag name="line">line</tag>
+
+    <!-- MORSE TAG -->
+    <tag name="morse">morse</tag>
+
+    <!-- BINARY TAG -->
+    <tag name="binary">binary</tag>
+
+    <!-- CHARACTER TAG -->
+    <tag name="character">character</tag>
+
+</tags>

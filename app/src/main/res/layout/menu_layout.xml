@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout2"
@@ -10,28 +11,13 @@
 
     <!-- MENU TITLE TEXT -->
     <!-- PLACED AT TOP OF SCREEN WITH MARGIN OF 20dp -->
-
-    <!-- SUBTEXT -->
-
-    <!-- RELATIVE LAYOUT -->
-    <!-- HOLDS MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
-
-
-    <!-- CONVERTERS -->
-
-    <!-- WORD ACTIVITY -->
-
-    <!-- LIGHTS OUT ACTIVITY -->
-
-    <!-- SLIDING PUZZLE ACTIVITY -->
-    <TextView
+    <ImageView
         android:id="@+id/menuTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_title"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white"
-        android:textSize="55dp"
+        android:layout_height="175dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/frontier_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,63 +27,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/subtitle"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white"
+        android:textColor="@color/button_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuTitle" />
+        app:layout_constraintTop_toBottomOf="@id/menuTitle" />
 
+    <!-- MENU BUTTONS WHICH WILL TAKE USERS TO VARIOUS OTHER ACTIVITIES -->
+    <!-- CONVERTERS -->
     <Button
         android:id="@+id/converter_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
-        android:onClick="launchConverterActivity"
+        android:layout_marginTop="100dp"
         android:text="@string/convert_text"
-        app:layout_constraintBottom_toTopOf="@+id/word_btn"
+        android:backgroundTint="@color/button_red"
+        android:textColor="@color/button_text"
+        android:onClick="launchConverterActivity"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- WORD ACTIVITY -->
     <Button
         android:id="@+id/word_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
-        android:onClick="launchWordActivity"
+        android:layout_marginTop="20dp"
         android:text="@string/word_text"
-        app:layout_constraintBottom_toTopOf="@+id/light_btn"
+        android:backgroundTint="@color/button_red"
+        android:textColor="@color/button_text"
+        android:onClick="launchWordActivity"
+        app:layout_constraintTop_toBottomOf="@+id/converter_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- LIGHTS OUT ACTIVITY -->
     <Button
         android:id="@+id/light_btn"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/button_width"
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
-        android:onClick="launchLightsActivity"
+        android:layout_marginTop="20dp"
         android:text="@string/light_text"
-        app:layout_constraintBottom_toTopOf="@+id/slider_btn"
+        android:backgroundTint="@color/button_red"
+        android:textColor="@color/button_text"
+        android:onClick="launchLightsActivity"
+        app:layout_constraintTop_toBottomOf="@id/word_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/slider_btn"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="100dp"
-        android:onClick="launchSliderActivity"
-        android:text="@string/slider_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
+    <!-- SLIDING PUZZLE ACTIVITY -->
+    <!-- THIS IS NO LONGER GOING TO BE IMPLEMENTED -->
 </androidx.constraintlayout.widget.ConstraintLayout>
