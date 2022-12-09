@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- LAYOUT CONFIGURATION -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/puzzle_background_gray">
+
+
+    <!-- HOLDS THE LOCK ICON -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter scrambled word here"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:singleLine="true"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/lock_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/lock_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextInput" />
+
+    <Button
+        android:id="@+id/clear_puzzle"
+        android:layout_width="@dimen/small_button_width"
+        android:layout_height="@dimen/small_button_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/puzzle_input_height"
+        android:backgroundTint="@color/button_red"
+        android:onClick="clearPuzzle"
+        android:text="@string/clear_btn_text"
+        android:textColor="@color/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lock_icon" />
+
+    <TextView
+        android:id="@+id/puzzle_solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clear_puzzle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/puzzle_solution"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clear_puzzle" />
+
+    <Button
+        android:id="@+id/solve_puzzle"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/puzzle_input_height"
+        android:backgroundTint="@color/button_red"
+        android:text="@string/solve_btn_text"
+        android:textColor="@color/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/puzzle_solution" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
