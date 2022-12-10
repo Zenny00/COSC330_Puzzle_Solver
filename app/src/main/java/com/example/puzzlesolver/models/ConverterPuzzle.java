@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Puzzle superclass, implements the puzzle interface with default implementations
+
 package com.example.puzzlesolver.models;
 
 //Super class that can be overridden by subclasses

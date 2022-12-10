@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Arrow line puzzle, uses a number line
+
 package com.example.puzzlesolver.models;
 
 import android.util.Log;

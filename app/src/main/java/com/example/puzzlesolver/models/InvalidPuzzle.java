@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Invalid puzzle, has solution will always return false 
+
 package com.example.puzzlesolver.models;
 
 import android.util.Log;

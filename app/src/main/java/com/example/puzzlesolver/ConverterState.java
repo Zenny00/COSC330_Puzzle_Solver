@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Dialog picker setup, configures custom icon pack
+
 package com.example.puzzlesolver;
 
 import android.app.Application;

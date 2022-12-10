@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Shape puzzle, counts the number of sides on each shape
+
 package com.example.puzzlesolver.models;
 
 public class ShapePuzzle extends ConverterPuzzle {

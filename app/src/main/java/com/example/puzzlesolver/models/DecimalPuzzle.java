@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Decimal puzzle, converts decimal values to characters
+
 package com.example.puzzlesolver.models;
 
 public class DecimalPuzzle extends ConverterPuzzle {

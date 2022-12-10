@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Builds the different types of puzzles using the factory pattern
+
 package com.example.puzzlesolver.models.factories;
 
 import android.util.Log;

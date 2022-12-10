@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Converter puzzle solver activity, use the icon dialog picker to allow users to input custom icons
+
 package com.example.puzzlesolver;
 
 import android.animation.Animator;

@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Line puzzle, counts the number of lines present
+
 package com.example.puzzlesolver.models;
 
 public class LinePuzzle extends ConverterPuzzle {

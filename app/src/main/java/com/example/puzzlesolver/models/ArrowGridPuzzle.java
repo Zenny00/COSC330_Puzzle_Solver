@@ -1,3 +1,7 @@
+//Name: Joshua Comfort
+//Date: 11/22/2022-12/10/2022
+//Description: Arrow Grid Puzzle similar to a numpad on a keyboard
+
 package com.example.puzzlesolver.models;
 
 import android.util.Log;
